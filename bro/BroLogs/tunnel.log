@@ -1,0 +1,14 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	tunnel
+#open	2017-04-09-21-03-10
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	tunnel_type	action
+#types	time	string	addr	port	addr	port	enum	enum
+1491786189.967253	-	10.1.60.99	0	10.1.60.129	3128	Tunnel::HTTP	Tunnel::DISCOVER
+1491786192.619822	-	10.1.60.98	0	10.1.60.129	3128	Tunnel::HTTP	Tunnel::DISCOVER
+1491786201.327537	-	10.1.60.100	0	10.1.60.129	3128	Tunnel::HTTP	Tunnel::DISCOVER
+1491786203.857280	-	10.1.60.101	0	10.1.60.129	3128	Tunnel::HTTP	Tunnel::DISCOVER
+1491786332.995557	-	10.1.60.97	0	10.1.60.129	3128	Tunnel::HTTP	Tunnel::DISCOVER
+#close	2017-04-09-21-08-03

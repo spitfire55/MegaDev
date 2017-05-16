@@ -1,0 +1,16 @@
+filter{
+ if [message] =~ /^#/ {
+   drop { }
+ }
+ else {
+  if [type] == /home/klim/MegaDev_Capstone/bro/BroLogs/conn.log {
+	grok {
+		match => [
+			"message", "(?:-|%{UNIX_TIME:ts})\t(?:-|%{WORD:uid})\t(?:-|%{IP:id.orig_h})\t(?:-|%{POSINT:id.orig_p})\t(?:-|%{IP:id.resp_h})\t(?:-|%{POSINT:id.resp_p})\t(?:-|%{WORD:proto})\t(?:-|%{WORD:service})\t(?:-|%{WORD:duration})\t(?:-|%{BASE10NUM:orig_bytes})\t(?:-|%{BASE10NUM:resp_bytes})\t(?:-|%{WORD:conn_state})\t(?:-|%{BOOL:local_orig})\t(?:-|%{BOOL:local_resp})\t(?:-|%{BASE10NUM:missed_bytes})\t(?:-|%{WORD:history})\t(?:-|%{BASE10NUM:orig_pkts})\t(?:-|%{BASE10NUM:orig_ip_bytes})\t(?:-|%{BASE10NUM:resp_pkts})\t(?:-|%{BASE10NUM:resp_ip_bytes})\t(?:-|%{DATA:tunnel_parents})",
+			"message", "%{GREEDYDATA:request}"
+			]
+		}
+	}
+ }
+}
+

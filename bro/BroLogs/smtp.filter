@@ -1,0 +1,16 @@
+filter{
+ if [message] =~ /^#/ {
+   drop { }
+ }
+ else {
+  if [type] == /home/klim/MegaDev_Capstone/bro/BroLogs/smtp.log {
+	grok {
+		match => [
+			"message", "(?:-|%{UNIX_TIME:ts})\t(?:-|%{WORD:uid})\t(?:-|%{IP:id.orig_h})\t(?:-|%{POSINT:id.orig_p})\t(?:-|%{IP:id.resp_h})\t(?:-|%{POSINT:id.resp_p})\t(?:-|%{BASE10NUM:trans_depth})\t(?:-|%{WORD:helo})\t(?:-|%{WORD:mailfrom})\t(?:-|%{DATA:rcptto})\t(?:-|%{WORD:date})\t(?:-|%{WORD:from})\t(?:-|%{DATA:to})\t(?:-|%{WORD:reply_to})\t(?:-|%{WORD:msg_id})\t(?:-|%{WORD:in_reply_to})\t(?:-|%{WORD:subject})\t(?:-|%{IP:x_originating_ip})\t(?:-|%{WORD:first_received})\t(?:-|%{WORD:second_received})\t(?:-|%{WORD:last_reply})\t(?:-|%{DATA:path})\t(?:-|%{WORD:user_agent})\t(?:-|%{BOOL:tls})\t(?:-|%{DATA:fuids})",
+			"message", "%{GREEDYDATA:request}"
+			]
+		}
+	}
+ }
+}
+

@@ -1,0 +1,16 @@
+filter{
+ if [message] =~ /^#/ {
+   drop { }
+ }
+ else {
+  if [type] == /home/klim/MegaDev_Capstone/bro/BroLogs/x509.log {
+	grok {
+		match => [
+			"message", "(?:-|%{UNIX_TIME:ts})\t(?:-|%{WORD:id})\t(?:-|%{BASE10NUM:certificate.version})\t(?:-|%{WORD:certificate.serial})\t(?:-|%{WORD:certificate.subject})\t(?:-|%{WORD:certificate.issuer})\t(?:-|%{UNIX_TIME:certificate.not_valid_before})\t(?:-|%{UNIX_TIME:certificate.not_valid_after})\t(?:-|%{WORD:certificate.key_alg})\t(?:-|%{WORD:certificate.sig_alg})\t(?:-|%{WORD:certificate.key_type})\t(?:-|%{BASE10NUM:certificate.key_length})\t(?:-|%{WORD:certificate.exponent})\t(?:-|%{WORD:certificate.curve})\t(?:-|%{DATA:san.dns})\t(?:-|%{DATA:san.uri})\t(?:-|%{DATA:san.email})\t(?:-|%{DATA:san.ip})\t(?:-|%{BOOL:basic_constraints.ca})\t(?:-|%{BASE10NUM:basic_constraints.path_len})",
+			"message", "%{GREEDYDATA:request}"
+			]
+		}
+	}
+ }
+}
+

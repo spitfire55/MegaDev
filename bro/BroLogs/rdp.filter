@@ -1,0 +1,16 @@
+filter{
+ if [message] =~ /^#/ {
+   drop { }
+ }
+ else {
+  if [type] == /home/klim/MegaDev_Capstone/bro/BroLogs/rdp.log {
+	grok {
+		match => [
+			"message", "(?:-|%{UNIX_TIME:ts})\t(?:-|%{WORD:uid})\t(?:-|%{IP:id.orig_h})\t(?:-|%{POSINT:id.orig_p})\t(?:-|%{IP:id.resp_h})\t(?:-|%{POSINT:id.resp_p})\t(?:-|%{WORD:cookie})\t(?:-|%{WORD:result})\t(?:-|%{WORD:security_protocol})\t(?:-|%{WORD:keyboard_layout})\t(?:-|%{WORD:client_build})\t(?:-|%{WORD:client_name})\t(?:-|%{WORD:client_dig_product_id})\t(?:-|%{BASE10NUM:desktop_width})\t(?:-|%{BASE10NUM:desktop_height})\t(?:-|%{WORD:requested_color_depth})\t(?:-|%{WORD:cert_type})\t(?:-|%{BASE10NUM:cert_count})\t(?:-|%{BOOL:cert_permanent})\t(?:-|%{WORD:encryption_level})\t(?:-|%{WORD:encryption_method})",
+			"message", "%{GREEDYDATA:request}"
+			]
+		}
+	}
+ }
+}
+

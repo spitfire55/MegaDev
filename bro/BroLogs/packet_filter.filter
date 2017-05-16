@@ -1,0 +1,16 @@
+filter{
+ if [message] =~ /^#/ {
+   drop { }
+ }
+ else {
+  if [type] == /home/klim/MegaDev_Capstone/bro/BroLogs/packet_filter.log {
+	grok {
+		match => [
+			"message", "(?:-|%{UNIX_TIME:ts})\t(?:-|%{WORD:node})\t(?:-|%{WORD:filter})\t(?:-|%{BOOL:init})\t(?:-|%{BOOL:success})",
+			"message", "%{GREEDYDATA:request}"
+			]
+		}
+	}
+ }
+}
+

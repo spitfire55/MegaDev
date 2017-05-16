@@ -1,0 +1,464 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	ftp
+#open	2017-04-09-21-02-57
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	user	password	command	arg	mime_type	file_size	reply_code	reply_msg	data_channel.passive	data_channel.orig_h	data_channel.resp_h	data_channel.resp_p	fuid
+#types	time	string	addr	port	addr	port	string	string	string	string	string	count	count	string	bool	addr	addr	port	string
+1491786177.136030	C9WY3OpNunzV4UtAj	10.1.60.99	34148	10.2.146.122	21	<unknown>	-	RETR	ftp://10.2.146.122/./Welcome.msg	-	1010	226	Transfer complete.	-	-	-	-	-
+1491786177.212636	C9WY3OpNunzV4UtAj	10.1.60.99	34148	10.2.146.122	21	<unknown>	-	PASV	-	-	-	227	Entering Passive Mode (10,2,146,122,203,193)	T	10.1.60.99	10.2.146.122	52161	-
+1491786182.116716	Cr6xwr1jRH7wAC2chl	10.1.60.101	53207	10.1.120.5	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,120,5,13,40).	T	10.1.60.101	10.1.120.5	3368	-
+1491786182.133806	Cr6xwr1jRH7wAC2chl	10.1.60.101	53207	10.1.120.5	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.120.5/./public/SQuzRSpF.exe	text/plain	-	350	File exists, ready for destination name	-	-	-	-	FSNgIU2pOxGNsHIxE3
+1491786183.059443	CRpCWz29gTYHhkKrl	10.1.60.99	45047	10.1.40.221	21	anonymous	-	PASV	-	-	-	227	Entering Passive Mode (10,1,40,221,213,201).	T	10.1.60.99	10.1.40.221	54729	-
+1491786183.371200	C1jPJV16OmCgHFagnj	10.1.60.99	45050	10.1.40.221	21	rubberneck	-	STOR	ftp://10.1.40.221/./6AVAopAp.exe	-	-	226	Transfer complete.	-	-	-	-	-
+1491786184.245235	CDYlIK2cozZEEgQr68	10.1.100.2	53635	10.1.60.3	21	<unknown>	-	PASV	-	-	-	0	227 Entering Passive Mode (10,1,60,3,175,151).	-	-	-	-	-
+1491786184.286775	CDYlIK2cozZEEgQr68	10.1.100.2	53635	10.1.60.3	21	<unknown>	-	RETR	ftp://10.1.60.3/./m1IJNypm.exe	-	-	0	226 Transfer complete.	-	-	-	-	-
+1491786184.400361	CDYlIK2cozZEEgQr68	10.1.100.2	53635	10.1.60.3	21	<unknown>	-	DELE	ftp://10.1.60.3/./m1IJNypm.exe	-	-	0	250 Delete operation successful.	-	-	-	-	-
+1491786184.808069	CeAakdb9tGOD3KHMg	10.1.100.2	56061	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,252,152).	T	10.1.100.2	10.1.60.3	64664	-
+1491786184.850868	CeAakdb9tGOD3KHMg	10.1.100.2	56061	10.1.60.3	21	rubberneck	<hidden>	STOR	ftp://10.1.60.3/./private/CFwdvgrN.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FyAYaB3Ypq4FRooxa2
+1491786185.044913	CeAakdb9tGOD3KHMg	10.1.100.2	56061	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,65,128).	T	10.1.100.2	10.1.60.3	16768	FyAYaB3Ypq4FRooxa2
+1491786185.090236	CeAakdb9tGOD3KHMg	10.1.100.2	56061	10.1.60.3	21	rubberneck	<hidden>	RETR	ftp://10.1.60.3/./private/QWWCD8OY.exe	-	8	226	Transfer complete.	-	-	-	-	F2B63R2JFMGxOOSaF3
+1491786185.198053	CeAakdb9tGOD3KHMg	10.1.100.2	56061	10.1.60.3	21	rubberneck	<hidden>	DELE	ftp://10.1.60.3/./private/QWWCD8OY.exe	-	-	250	Delete operation successful.	-	-	-	-	F2B63R2JFMGxOOSaF3
+1491786190.877753	COocAS3l6zvYeb7GP7	10.1.60.98	38122	10.2.150.103	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,150,103,137,7)	T	10.1.60.98	10.2.150.103	35079	-
+1491786190.912203	COocAS3l6zvYeb7GP7	10.1.60.98	38122	10.2.150.103	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.150.103/./pub/ftp.compaq.com/Welcome.msg	text/plain	1103	226	Transfer complete.	-	-	-	-	FFeP2j1sLx25y6buB5
+1491786190.985076	COocAS3l6zvYeb7GP7	10.1.60.98	38122	10.2.150.103	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,150,103,144,20)	T	10.1.60.98	10.2.150.103	36884	FFeP2j1sLx25y6buB5
+1491786192.047994	CHsMUgh57hOd3mGkk	10.1.60.98	43484	10.1.190.5	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,190,5,254,249)	T	10.1.60.98	10.1.190.5	65273	-
+1491786192.047994	CcUzUFJY3Fb87oyMe	10.2.149.151	53529	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,80,3).	T	10.2.149.151	10.1.60.3	20483	-
+1491786192.047994	CHsMUgh57hOd3mGkk	10.1.60.98	43484	10.1.190.5	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.190.5/./public/mDHqYPI6.exe	text/plain	-	226	Transfer complete.	-	-	-	-	F5XjAc1xHd7cPkSyif
+1491786192.144023	CHsMUgh57hOd3mGkk	10.1.60.98	43484	10.1.190.5	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,190,5,254,250)	T	10.1.60.98	10.1.190.5	65274	F5XjAc1xHd7cPkSyif
+1491786192.144214	CHsMUgh57hOd3mGkk	10.1.60.98	43484	10.1.190.5	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.190.5/./public/90k2wSwh.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FYFZPyfhaCdV8ejUe
+1491786192.192267	CHsMUgh57hOd3mGkk	10.1.60.98	43484	10.1.190.5	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.190.5/./public/90k2wSwh.exe	-	-	250	DELE command successful.	-	-	-	-	FYFZPyfhaCdV8ejUe
+1491786192.720905	CPRdrm24zmcpy63nf6	10.1.60.98	43490	10.1.190.5	21	rubberneck	<hidden>	PASV	-	-	-	0	227 Entering Passive Mode (10,1,190,5,254,251)	-	-	-	-	-
+1491786192.777711	CPRdrm24zmcpy63nf6	10.1.60.98	43490	10.1.190.5	21	rubberneck	<hidden>	STOR	ftp://10.1.190.5/./LSvZXDFq.exe	-	-	0	226 Transfer complete.	-	-	-	-	-
+1491786192.130736	CcUzUFJY3Fb87oyMe	10.2.149.151	53529	10.1.60.3	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.60.3/./public/6YhVmX4r.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FAJIn93tf0vIOvmYjd
+1491786193.362705	Czz9MO2q1T1b9Qpw17	10.2.149.151	53532	10.1.60.3	21	rubberneck	-	STOR	ftp://10.1.60.3/./RasCojFk.exe	-	-	0	226 Transfer complete.	-	-	-	-	-
+1491786193.874504	Czz9MO2q1T1b9Qpw17	10.2.149.151	53532	10.1.60.3	21	rubberneck	-	DELE	ftp://10.1.60.3/./so7CsCE8.exe	-	-	0	250 Delete operation successful.	-	-	-	-	-
+1491786199.365781	C0TGpx47fWPt2X87u5	10.1.60.101	53222	10.1.100.40	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,100,40,207,91)	T	10.1.60.101	10.1.100.40	53083	-
+1491786199.434617	C0TGpx47fWPt2X87u5	10.1.60.101	53222	10.1.100.40	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.100.40/./public/y7ffkeFB.exe	text/plain	-	150	Opening BINARY mode data connection for 'y7ffkeFB.exe'.	-	-	-	-	Fk6faB2i47M2asHLlc
+1491786199.683893	C0TGpx47fWPt2X87u5	10.1.60.101	53222	10.1.100.40	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,100,40,221,82)	T	10.1.60.101	10.1.100.40	56658	Fk6faB2i47M2asHLlc
+1491786199.755622	C0TGpx47fWPt2X87u5	10.1.60.101	53222	10.1.100.40	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.100.40/./public/EXWzxXl2.exe	text/plain	2	226	Transfer complete.	-	-	-	-	FtRlwQ1TMBSZZOHtq2
+1491786199.997149	C0TGpx47fWPt2X87u5	10.1.60.101	53222	10.1.100.40	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.100.40/./public/EXWzxXl2.exe	-	-	250	DELE command successful.	-	-	-	-	FtRlwQ1TMBSZZOHtq2
+1491786200.599988	Cepuge2dUeHUmdsuHk	10.1.60.101	53225	10.1.100.40	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,100,40,253,209)	T	10.1.60.101	10.1.100.40	64977	-
+1491786200.727335	Cepuge2dUeHUmdsuHk	10.1.60.101	53225	10.1.100.40	21	rubberneck	<hidden>	STOR	ftp://10.1.100.40/./private/Dn7wJEYv.exe	text/plain	-	227	Entering Passive Mode (10,1,100,40,203,238)	-	-	-	-	Fwq4Qk1diuKhl9wukl
+1491786200.949523	Cepuge2dUeHUmdsuHk	10.1.60.101	53225	10.1.100.40	21	rubberneck	<hidden>	RETR	ftp://10.1.100.40/./private/1EngUrWq.exe	-	1	226	Transfer complete.	-	-	-	-	Fwq4Qk1diuKhl9wukl
+1491786201.237526	Cepuge2dUeHUmdsuHk	10.1.60.101	53225	10.1.100.40	21	rubberneck	<hidden>	DELE	ftp://10.1.100.40/./private/1EngUrWq.exe	-	-	250	DELE command successful.	-	-	-	-	Fwq4Qk1diuKhl9wukl
+1491786217.861181	CaeYGo1tMRuM20gW3l	10.1.60.101	53257	10.2.117.6	21	anonymous	-	PASV	-	-	-	227	Entering Passive Mode (10,2,117,6,135,206)	T	10.1.60.101	10.2.117.6	34766	-
+1491786218.299211	CsdYug17x5oimN7hle	10.1.60.99	45899	10.1.10.40	21	<unknown>	-	PASV	-	-	-	227	Entering Passive Mode (10,1,10,40,187,136)	T	10.1.60.99	10.1.10.40	48008	-
+1491786218.342984	CsdYug17x5oimN7hle	10.1.60.99	45899	10.1.10.40	21	<unknown>	-	STOR	ftp://10.1.10.40/./public/lo5uETR3.exe	text/plain	-	226	File receive OK.	-	-	-	-	FdxEhg3vtFpbjrBp7
+1491786218.500728	CsdYug17x5oimN7hle	10.1.60.99	45899	10.1.10.40	21	<unknown>	-	PASV	-	-	-	227	Entering Passive Mode (10,1,10,40,170,227)	T	10.1.60.99	10.1.10.40	43747	FdxEhg3vtFpbjrBp7
+1491786218.508836	CsdYug17x5oimN7hle	10.1.60.99	45899	10.1.10.40	21	<unknown>	-	RETR	ftp://10.1.10.40/./public/jrOdKpXR.exe	text/plain	32768	226	File send OK.	-	-	-	-	F0Zdgz1kfxHSKMTeIe
+1491786218.595911	CsdYug17x5oimN7hle	10.1.60.99	45899	10.1.10.40	21	<unknown>	-	DELE	ftp://10.1.10.40/./public/jrOdKpXR.exe	-	-	250	Delete operation successful.	-	-	-	-	F0Zdgz1kfxHSKMTeIe
+1491786218.697911	Csi0Ay3jV64A5RIKT	10.1.60.100	61687	10.2.225.3	21	<unknown>	-	PASV	-	-	-	227	Entering Passive Mode (10,2,225,3,224,130).	T	10.1.60.100	10.2.225.3	57474	-
+1491786218.756721	C9VUv53QKsrM1QX4i8	10.1.60.99	45902	10.1.10.40	21	<unknown>	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,10,40,221,211)	T	10.1.60.99	10.1.10.40	56787	-
+1491786218.789946	C9VUv53QKsrM1QX4i8	10.1.60.99	45902	10.1.10.40	21	<unknown>	<hidden>	STOR	ftp://10.1.10.40/./WPb2255T.exe	text/plain	-	226	File receive OK.	-	-	-	-	F8q6Sq14qjR0d2NVfc
+1491786218.735705	Csi0Ay3jV64A5RIKT	10.1.60.100	61687	10.2.225.3	21	<unknown>	-	RETR	ftp://10.2.225.3/./pub/Welcome.msg	-	-	125	Data connection already open; Transfer starting.	-	-	-	-	F6jgLw1QHGApaZgTal
+1491786218.958865	C9VUv53QKsrM1QX4i8	10.1.60.99	45902	10.1.10.40	21	<unknown>	<hidden>	PASV	-	-	-	250	Delete operation successful.	-	-	-	-	F8q6Sq14qjR0d2NVfc
+1491786219.890035	C8Tqrt24GlS82VS6n1	10.1.60.99	50874	10.2.187.114	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,187,114,223,125)	T	10.1.60.99	10.2.187.114	57213	-
+1491786219.981262	C8Tqrt24GlS82VS6n1	10.1.60.99	50874	10.2.187.114	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.187.114/./pub/ftp.lucasarts.com/Welcome.msg	-	307	226	Transfer complete.	-	-	-	-	FnQMVU345r3kB8jVf8
+1491786220.038117	C8Tqrt24GlS82VS6n1	10.1.60.99	50874	10.2.187.114	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,187,114,133,141)	T	10.1.60.99	10.2.187.114	34189	FnQMVU345r3kB8jVf8
+1491786220.219555	CJ7aouBUNWc5tmHxc	10.1.60.100	61691	10.2.136.213	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,136,213,160,126)	T	10.1.60.100	10.2.136.213	41086	-
+1491786220.222640	CJ7aouBUNWc5tmHxc	10.1.60.100	61691	10.2.136.213	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.136.213/./pub/sunsite.unc.edu/Welcome.msg	text/plain	1393	226	Transfer complete.	-	-	-	-	F2LzWz1aJq5jzqIk4d
+1491786220.570094	CJ7aouBUNWc5tmHxc	10.1.60.100	61691	10.2.136.213	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,136,213,171,41)	T	10.1.60.100	10.2.136.213	43817	F2LzWz1aJq5jzqIk4d
+1491786226.181562	Cysyc7VWUzgbhQHIh	10.1.60.98	40906	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,179,232).	T	10.1.60.98	10.1.60.3	46056	-
+1491786226.183727	Cysyc7VWUzgbhQHIh	10.1.60.98	40906	10.1.60.3	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.60.3/./zRO4L13F.exe	-	-	226	Transfer complete.	-	-	-	-	FrAH9A2lNu4baVguK5
+1491786226.570149	C9ZIM02vWxRgswkgGj	10.1.60.98	40912	10.1.60.3	21	<unknown>	-	PASV	-	-	-	0	227 Entering Passive Mode (10,1,60,3,73,30).	-	-	-	-	-
+1491786226.606861	C9ZIM02vWxRgswkgGj	10.1.60.98	40912	10.1.60.3	21	<unknown>	-	STOR	ftp://10.1.60.3/./4Gko24In.exe	-	-	0	226 Transfer complete.	-	-	-	-	-
+1491786226.706556	C9ZIM02vWxRgswkgGj	10.1.60.98	40912	10.1.60.3	21	<unknown>	-	PASV	-	-	-	0	227 Entering Passive Mode (10,1,60,3,247,170).	-	-	-	-	-
+1491786226.715687	C9ZIM02vWxRgswkgGj	10.1.60.98	40912	10.1.60.3	21	<unknown>	-	RETR	ftp://10.1.60.3/./q5kaa5iQ.exe	-	-	0	226 Transfer complete.	-	-	-	-	-
+1491786226.798909	C9ZIM02vWxRgswkgGj	10.1.60.98	40912	10.1.60.3	21	<unknown>	-	DELE	ftp://10.1.60.3/./q5kaa5iQ.exe	-	-	0	250 Delete operation successful.	-	-	-	-	-
+1491786229.963645	CSJo3n3ziua2Se9QC9	10.1.60.101	53327	10.2.187.114	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,187,114,227,214)	T	10.1.60.101	10.2.187.114	58326	-
+1491786229.985347	CSJo3n3ziua2Se9QC9	10.1.60.101	53327	10.2.187.114	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.187.114/./pub/ftp.lucasarts.com/Welcome.msg	-	307	226	Transfer complete.	-	-	-	-	FO0Okc1DfXxM80amlh
+1491786230.095699	CSJo3n3ziua2Se9QC9	10.1.60.101	53327	10.2.187.114	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,187,114,215,144)	T	10.1.60.101	10.2.187.114	55184	FO0Okc1DfXxM80amlh
+1491786239.643051	CU5sbx2mTbHSuPIpZe	10.1.60.100	61766	10.2.187.114	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,187,114,148,177)	T	10.1.60.100	10.2.187.114	38065	-
+1491786239.643243	CU5sbx2mTbHSuPIpZe	10.1.60.100	61766	10.2.187.114	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.187.114/./pub/ftp.lucasarts.com/Welcome.msg	-	307	226	Transfer complete.	-	-	-	-	FM9wvw4R42qKYfegSd
+1491786239.853747	CU5sbx2mTbHSuPIpZe	10.1.60.100	61766	10.2.187.114	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,187,114,203,36)	T	10.1.60.100	10.2.187.114	52004	FM9wvw4R42qKYfegSd
+1491786252.646604	CviXjXq09nOHmowdg	10.1.60.98	42218	10.1.10.40	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,10,40,195,68)	T	10.1.60.98	10.1.10.40	49988	-
+1491786252.662505	CviXjXq09nOHmowdg	10.1.60.98	42218	10.1.10.40	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.10.40/./public/WLZktxq4.exe	text/plain	-	250	Rename successful.	-	-	-	-	FbwEhD24IYnBlE4TH6
+1491786257.603167	C1E62hEeDiWMMdB6h	10.1.60.101	53376	10.1.190.5	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.190.5/./GDG9nTrd.exe	-	-	0	250 DELE command successful.	-	-	-	-	-
+1491786260.439283	CxjlV626G5EbhyfK5g	10.1.60.101	53419	10.2.146.122	21	<unknown>	-	PASV	-	-	-	227	Entering Passive Mode (10,2,146,122,152,45)	T	10.1.60.101	10.2.146.122	38957	-
+1491786260.464688	CxjlV626G5EbhyfK5g	10.1.60.101	53419	10.2.146.122	21	<unknown>	-	RETR	ftp://10.2.146.122/./pub/ftp.research.att.com/Welcome.msg	-	1010	226	Transfer complete.	-	-	-	-	FGCGfb3RnIScAhzlwf
+1491786260.547046	CxjlV626G5EbhyfK5g	10.1.60.101	53419	10.2.146.122	21	<unknown>	-	PASV	-	-	-	227	Entering Passive Mode (10,2,146,122,215,13)	T	10.1.60.101	10.2.146.122	55053	FGCGfb3RnIScAhzlwf
+1491786263.143151	C37gVQ177Ep162B3Re	10.1.60.100	61847	10.2.146.122	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,146,122,202,68)	T	10.1.60.100	10.2.146.122	51780	-
+1491786263.179674	C37gVQ177Ep162B3Re	10.1.60.100	61847	10.2.146.122	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.146.122/./pub/ftp.research.att.com/Welcome.msg	-	1010	226	Transfer complete.	-	-	-	-	F9sbSg3FsKrhNc8Bvl
+1491786263.448739	C37gVQ177Ep162B3Re	10.1.60.100	61847	10.2.146.122	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,146,122,205,195)	T	10.1.60.100	10.2.146.122	52675	F9sbSg3FsKrhNc8Bvl
+1491786264.901299	CVLdhI14IJ8XiuAyQc	10.1.60.98	37774	10.2.32.35	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,32,35,205,39)	T	10.1.60.98	10.2.32.35	52519	-
+1491786264.912072	CVLdhI14IJ8XiuAyQc	10.1.60.98	37774	10.2.32.35	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.32.35/./pub/ftp.cse.buffalo.edu/Welcome.msg	-	288	226	Transfer complete.	-	-	-	-	FeNlaz1gYzVfbH7L55
+1491786265.002963	CVLdhI14IJ8XiuAyQc	10.1.60.98	37774	10.2.32.35	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,32,35,192,196)	T	10.1.60.98	10.2.32.35	49348	FeNlaz1gYzVfbH7L55
+1491786266.063342	CIDBmH2rClfL9vHLD3	10.1.60.100	61853	10.1.40.221	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,40,221,213,231).	T	10.1.60.100	10.1.40.221	54759	-
+1491786266.084722	CIDBmH2rClfL9vHLD3	10.1.60.100	61853	10.1.40.221	21	rubberneck	<hidden>	STOR	ftp://10.1.40.221/./private/NgZr8fUb.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FYyBH1Of3fjeIdAq3
+1491786266.207739	CIDBmH2rClfL9vHLD3	10.1.60.100	61853	10.1.40.221	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,40,221,213,233).	T	10.1.60.100	10.1.40.221	54761	FYyBH1Of3fjeIdAq3
+1491786266.233097	CIDBmH2rClfL9vHLD3	10.1.60.100	61853	10.1.40.221	21	rubberneck	<hidden>	RETR	ftp://10.1.40.221/./private/gqEEw8Zv.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FYuzq31vJujGP7xvzc
+1491786266.276368	CIDBmH2rClfL9vHLD3	10.1.60.100	61853	10.1.40.221	21	rubberneck	<hidden>	DELE	ftp://10.1.40.221/./private/gqEEw8Zv.exe	-	-	250	DELE command successful.	-	-	-	-	FYuzq31vJujGP7xvzc
+1491786267.515734	CojJXGyCd1ROOWoqk	10.1.60.99	41467	10.2.107.205	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,107,205,156,143)	T	10.1.60.99	10.2.107.205	40079	-
+1491786267.523894	CojJXGyCd1ROOWoqk	10.1.60.99	41467	10.2.107.205	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.107.205/./pub/ftp.redhat.com/Welcome.msg	-	274	226	Transfer complete.	-	-	-	-	F30Itq4uQsLeegdGg2
+1491786267.596884	CojJXGyCd1ROOWoqk	10.1.60.99	41467	10.2.107.205	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,107,205,148,217)	T	10.1.60.99	10.2.107.205	38105	F30Itq4uQsLeegdGg2
+1491786269.440945	CoNvFn1YZROSOm2Ugb	10.2.151.77	52858	10.1.60.3	21	<unknown>	<hidden>	STOR	ftp://10.1.60.3/./rnoezSXW.exe	-	-	150	Ok to send data.	-	-	-	-	-
+1491786275.490489	C6c7QcLjNNoJdDjMg	10.1.40.189	56530	10.1.60.3	21	<unknown>	-	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,108,113).	T	10.1.40.189	10.1.60.3	27761	-
+1491786275.513822	C6c7QcLjNNoJdDjMg	10.1.40.189	56530	10.1.60.3	21	<unknown>	-	STOR	ftp://10.1.60.3/./public/gw3Lch3q.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FhxWbw2uWl1ydMfdCg
+1491786276.248687	C6c7QcLjNNoJdDjMg	10.1.40.189	56530	10.1.60.3	21	<unknown>	-	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,79,22).	T	10.1.40.189	10.1.60.3	20246	FhxWbw2uWl1ydMfdCg
+1491786276.258807	C6c7QcLjNNoJdDjMg	10.1.40.189	56530	10.1.60.3	21	<unknown>	-	RETR	ftp://10.1.60.3/./public/V9usZqqg.exe	-	9	226	Transfer complete.	-	-	-	-	FWgXF23KCs8rlNWGYd
+1491786276.389719	C6c7QcLjNNoJdDjMg	10.1.40.189	56530	10.1.60.3	21	<unknown>	-	DELE	ftp://10.1.60.3/./public/V9usZqqg.exe	-	-	250	Delete operation successful.	-	-	-	-	FWgXF23KCs8rlNWGYd
+1491786282.330902	CehP1J1ve7qugWRjqi	10.1.120.11	46180	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,136,39).	T	10.1.120.11	10.1.60.3	34855	-
+1491786282.359949	CehP1J1ve7qugWRjqi	10.1.120.11	46180	10.1.60.3	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.60.3/./public/UPHlo87A.exe	text/plain	-	226	Transfer complete.	-	-	-	-	F2q0073Qwhm1Rzwd4
+1491786283.075998	CehP1J1ve7qugWRjqi	10.1.120.11	46180	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,254,12).	T	10.1.120.11	10.1.60.3	65036	F2q0073Qwhm1Rzwd4
+1491786283.104167	CehP1J1ve7qugWRjqi	10.1.120.11	46180	10.1.60.3	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.60.3/./public/z5lEJSW6.exe	text/plain	5	226	Transfer complete.	-	-	-	-	FOyUPm14Pwlvo60H0a
+1491786283.155404	CehP1J1ve7qugWRjqi	10.1.120.11	46180	10.1.60.3	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.60.3/./public/z5lEJSW6.exe	-	-	250	Delete operation successful.	-	-	-	-	FOyUPm14Pwlvo60H0a
+1491786283.409259	CxGFkI3ZtZvxn0NpF5	10.1.120.11	46186	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,50,66).	T	10.1.120.11	10.1.60.3	12866	-
+1491786283.439092	CxGFkI3ZtZvxn0NpF5	10.1.120.11	46186	10.1.60.3	21	rubberneck	<hidden>	STOR	ftp://10.1.60.3/./private/ndELS3Rf.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FELXRw3DXPcetgCrDk
+1491786283.533619	CxGFkI3ZtZvxn0NpF5	10.1.120.11	46186	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,42,20).	T	10.1.120.11	10.1.60.3	10772	FELXRw3DXPcetgCrDk
+1491786283.563702	CxGFkI3ZtZvxn0NpF5	10.1.120.11	46186	10.1.60.3	21	rubberneck	<hidden>	RETR	ftp://10.1.60.3/./private/fUoUSQ3F.exe	text/plain	3	226	Transfer complete.	-	-	-	-	FsN8vE3sho0mrPJ0pg
+1491786283.620607	CxGFkI3ZtZvxn0NpF5	10.1.120.11	46186	10.1.60.3	21	rubberneck	<hidden>	DELE	ftp://10.1.60.3/./private/fUoUSQ3F.exe	-	-	250	Delete operation successful.	-	-	-	-	FsN8vE3sho0mrPJ0pg
+1491786284.161637	CNoCiAVL3Lhf2YAwi	10.1.60.98	36618	10.1.40.221	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,40,221,213,238).	T	10.1.60.98	10.1.40.221	54766	-
+1491786284.184923	CNoCiAVL3Lhf2YAwi	10.1.60.98	36618	10.1.40.221	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.40.221/./public/RMOEMDPR.exe	text/plain	-	226	Transfer complete.	-	-	-	-	F9qYss2ZCil5aA13C8
+1491786284.284595	CNoCiAVL3Lhf2YAwi	10.1.60.98	36618	10.1.40.221	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,40,221,213,239).	T	10.1.60.98	10.1.40.221	54767	F9qYss2ZCil5aA13C8
+1491786284.340888	CNoCiAVL3Lhf2YAwi	10.1.60.98	36618	10.1.40.221	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.40.221/./public/mV1h5xgL.exe	text/plain	0	226	Transfer complete.	-	-	-	-	FocJNo2PnrJAMMGT4c
+1491786284.405877	CNoCiAVL3Lhf2YAwi	10.1.60.98	36618	10.1.40.221	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.40.221/./public/mV1h5xgL.exe	-	-	250	DELE command successful.	-	-	-	-	FocJNo2PnrJAMMGT4c
+1491786284.527210	Cuy33p2xUuNy2GGNZ	10.1.60.98	36624	10.1.40.221	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,40,221,213,241).	T	10.1.60.98	10.1.40.221	54769	-
+1491786284.554095	Cuy33p2xUuNy2GGNZ	10.1.60.98	36624	10.1.40.221	21	rubberneck	<hidden>	STOR	ftp://10.1.40.221/./private/f1a9GJB5.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FPzzGm4Mti3KyC6Hvj
+1491786284.672696	Cuy33p2xUuNy2GGNZ	10.1.60.98	36624	10.1.40.221	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,40,221,213,243).	T	10.1.60.98	10.1.40.221	54771	FPzzGm4Mti3KyC6Hvj
+1491786284.674911	Cuy33p2xUuNy2GGNZ	10.1.60.98	36624	10.1.40.221	21	rubberneck	<hidden>	RETR	ftp://10.1.40.221/./private/6Z8wAYAL.exe	text/plain	0	226	Transfer complete.	-	-	-	-	FXrFxV1PXqXpwdIb
+1491786284.710260	Cuy33p2xUuNy2GGNZ	10.1.60.98	36624	10.1.40.221	21	rubberneck	<hidden>	DELE	ftp://10.1.40.221/./private/6Z8wAYAL.exe	-	-	250	DELE command successful.	-	-	-	-	FXrFxV1PXqXpwdIb
+1491786284.745042	CDdeypg1RMqkIKE7j	10.1.60.101	53462	10.2.107.205	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,107,205,136,71)	T	10.1.60.101	10.2.107.205	34887	-
+1491786284.762449	CDdeypg1RMqkIKE7j	10.1.60.101	53462	10.2.107.205	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.107.205/./pub/ftp.redhat.com/Welcome.msg	-	274	226	Transfer complete.	-	-	-	-	FBkjIQ2vCGBkZJIWs4
+1491786284.839704	CDdeypg1RMqkIKE7j	10.1.60.101	53462	10.2.107.205	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,107,205,145,55)	T	10.1.60.101	10.2.107.205	37175	FBkjIQ2vCGBkZJIWs4
+1491786284.839636	CDwdvg4lV8BpIQpxO2	10.1.60.99	34758	10.1.70.102	21	anonymous	-	PASV	-	-	-	227	Entering Passive Mode (10,1,70,102,72,131).	T	10.1.60.99	10.1.70.102	18563	-
+1491786284.900251	CDwdvg4lV8BpIQpxO2	10.1.60.99	34758	10.1.70.102	21	anonymous	-	STOR	ftp://10.1.70.102/./public/8cwdmN8Q.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FDqH4i2XmfVjHgmMq5
+1491786285.081415	CDwdvg4lV8BpIQpxO2	10.1.60.99	34758	10.1.70.102	21	anonymous	-	PASV	-	-	-	227	Entering Passive Mode (10,1,70,102,72,138).	T	10.1.60.99	10.1.70.102	18570	FDqH4i2XmfVjHgmMq5
+1491786285.150208	CDwdvg4lV8BpIQpxO2	10.1.60.99	34758	10.1.70.102	21	anonymous	-	RETR	ftp://10.1.70.102/./public/MwmpFRRP.exe	text/plain	32768	226	Transfer complete.	-	-	-	-	F7XRCvGe1Qp2Vs8pc
+1491786285.211514	CDwdvg4lV8BpIQpxO2	10.1.60.99	34758	10.1.70.102	21	anonymous	-	DELE	ftp://10.1.70.102/./public/MwmpFRRP.exe	-	-	250	Delete operation successful.	-	-	-	-	F7XRCvGe1Qp2Vs8pc
+1491786286.500470	CTGAwK3JnpsPHwfV6a	10.1.40.189	56534	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,137,222).	T	10.1.40.189	10.1.60.3	35294	-
+1491786286.525084	CTGAwK3JnpsPHwfV6a	10.1.40.189	56534	10.1.60.3	21	rubberneck	<hidden>	STOR	ftp://10.1.60.3/./private/Gz6Ekxe1.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FkDq8i2inZnCH5xbkk
+1491786286.625891	CTGAwK3JnpsPHwfV6a	10.1.40.189	56534	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,191,250).	T	10.1.40.189	10.1.60.3	49146	FkDq8i2inZnCH5xbkk
+1491786286.649862	CTGAwK3JnpsPHwfV6a	10.1.40.189	56534	10.1.60.3	21	rubberneck	<hidden>	RETR	ftp://10.1.60.3/./private/tJWHXg7q.exe	text/plain	7	226	Transfer complete.	-	-	-	-	FBCwcJ2JvqffKkFdPg
+1491786286.702402	CTGAwK3JnpsPHwfV6a	10.1.40.189	56534	10.1.60.3	21	rubberneck	<hidden>	DELE	ftp://10.1.60.3/./private/tJWHXg7q.exe	-	-	250	Delete operation successful.	-	-	-	-	FBCwcJ2JvqffKkFdPg
+1491786292.459338	CpZtUE2WmhBNbo8Td2	10.1.60.99	36194	10.2.32.35	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,32,35,159,200)	T	10.1.60.99	10.2.32.35	40904	-
+1491786292.503380	CpZtUE2WmhBNbo8Td2	10.1.60.99	36194	10.2.32.35	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.32.35/./pub/ftp.cse.buffalo.edu/Welcome.msg	-	288	226	Transfer complete.	-	-	-	-	FeE9CR3fLa4cgrGhuf
+1491786292.561406	CpZtUE2WmhBNbo8Td2	10.1.60.99	36194	10.2.32.35	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,32,35,185,135)	T	10.1.60.99	10.2.32.35	47495	FeE9CR3fLa4cgrGhuf
+1491786292.885278	CAANxq31WhUBPMjnne	10.2.57.70	35884	10.1.60.3	21	<unknown>	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,248,227).	T	10.2.57.70	10.1.60.3	63715	-
+1491786292.906450	CAANxq31WhUBPMjnne	10.2.57.70	35884	10.1.60.3	21	<unknown>	<hidden>	STOR	ftp://10.1.60.3/./public/EHGWJGMO.exe	text/plain	-	226	Transfer complete.	-	-	-	-	F1rlWr1ch2bAEBIERc
+1491786293.366752	CAANxq31WhUBPMjnne	10.2.57.70	35884	10.1.60.3	21	<unknown>	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,190,130).	T	10.2.57.70	10.1.60.3	48770	F1rlWr1ch2bAEBIERc
+1491786293.392818	CAANxq31WhUBPMjnne	10.2.57.70	35884	10.1.60.3	21	<unknown>	<hidden>	RETR	ftp://10.1.60.3/./public/ZCAKcfG7.exe	text/plain	7	226	Transfer complete.	-	-	-	-	FLB8rq2pIsybncVoKf
+1491786293.706241	CUIFyXKGXgBlaEjcg	10.2.57.70	35890	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,30,168).	T	10.2.57.70	10.1.60.3	7848	-
+1491786293.733164	CUIFyXKGXgBlaEjcg	10.2.57.70	35890	10.1.60.3	21	rubberneck	<hidden>	STOR	ftp://10.1.60.3/./private/UTjcZjyy.exe	text/plain	-	226	Transfer complete.	-	-	-	-	Fy9Qiy18jJbTj1uxYl
+1491786293.882160	CUIFyXKGXgBlaEjcg	10.2.57.70	35890	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,231,60).	T	10.2.57.70	10.1.60.3	59196	Fy9Qiy18jJbTj1uxYl
+1491786293.882184	CUIFyXKGXgBlaEjcg	10.2.57.70	35890	10.1.60.3	21	rubberneck	<hidden>	RETR	ftp://10.1.60.3/./private/TQ5WIwhx.exe	text/plain	5	226	Transfer complete.	-	-	-	-	Fv3Xxj1sPn4ACnthWe
+1491786293.913320	CUIFyXKGXgBlaEjcg	10.2.57.70	35890	10.1.60.3	21	rubberneck	<hidden>	DELE	ftp://10.1.60.3/./private/TQ5WIwhx.exe	-	-	250	Delete operation successful.	-	-	-	-	Fv3Xxj1sPn4ACnthWe
+1491786295.162082	CLwLXX3Z4nbQRC8Vn8	10.1.60.100	61992	10.2.44.209	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,44,209,225,18)	T	10.1.60.100	10.2.44.209	57618	-
+1491786295.193014	CLwLXX3Z4nbQRC8Vn8	10.1.60.100	61992	10.2.44.209	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.44.209/./pub/ftp.aol.com/Welcome.msg	-	776	226	Transfer complete.	-	-	-	-	FyaeprooNQEIUFxmc
+1491786295.462185	CLwLXX3Z4nbQRC8Vn8	10.1.60.100	61992	10.2.44.209	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,44,209,167,111)	T	10.1.60.100	10.2.44.209	42863	FyaeprooNQEIUFxmc
+1491786295.596806	CVksx63BDRoIWANcR2	10.1.10.75	54172	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,119,134).	T	10.1.10.75	10.1.60.3	30598	-
+1491786295.628829	CVksx63BDRoIWANcR2	10.1.10.75	54172	10.1.60.3	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.60.3/./public/9j1miADX.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FrsKlb4wdak92Broj
+1491786296.005243	CVksx63BDRoIWANcR2	10.1.10.75	54172	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,211,75).	T	10.1.10.75	10.1.60.3	54091	FrsKlb4wdak92Broj
+1491786296.037467	CVksx63BDRoIWANcR2	10.1.10.75	54172	10.1.60.3	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.60.3/./public/DZYOkFze.exe	-	32768	226	Transfer complete.	-	-	-	-	FVVX7v1KmAGrWp4ree
+1491786296.081096	CVksx63BDRoIWANcR2	10.1.10.75	54172	10.1.60.3	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.60.3/./public/DZYOkFze.exe	-	-	250	Delete operation successful.	-	-	-	-	FVVX7v1KmAGrWp4ree
+1491786296.180034	CxKVuZ3MXxVOfHkzw1	10.1.60.101	53467	10.1.70.102	21	anonymous	-	PASV	-	-	-	227	Entering Passive Mode (10,1,70,102,75,151).	T	10.1.60.101	10.1.70.102	19351	-
+1491786296.345927	CUYyNC2AtiGfBNYR76	10.1.10.75	54176	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,170,213).	T	10.1.10.75	10.1.60.3	43733	-
+1491786296.219017	CxKVuZ3MXxVOfHkzw1	10.1.60.101	53467	10.1.70.102	21	anonymous	-	STOR	ftp://10.1.70.102/./public/E699UYQ4.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FRHHUV3cOjUQo1WAD5
+1491786293.448168	CAANxq31WhUBPMjnne	10.2.57.70	35884	10.1.60.3	21	<unknown>	<hidden>	DELE	ftp://10.1.60.3/./public/ZCAKcfG7.exe	-	-	221	Goodbye.	-	-	-	-	FLB8rq2pIsybncVoKf
+1491786301.834008	CpoVcK2ZjVfYp3qw38	10.1.60.99	55534	10.1.100.40	21	<unknown>	<hidden>	STOR	ftp://10.1.100.40/./1g8Ny4pT.exe	-	-	0	226 Transfer complete.	-	-	-	-	-
+1491786302.034981	CpoVcK2ZjVfYp3qw38	10.1.60.99	55534	10.1.100.40	21	<unknown>	<hidden>	PASV	-	-	-	0	226 Transfer complete.	-	-	-	-	-
+1491786302.034981	CpoVcK2ZjVfYp3qw38	10.1.60.99	55534	10.1.100.40	21	<unknown>	<hidden>	PASV	-	-	-	0	226 Transfer complete.	-	-	-	-	-
+1491786302.403420	CzEp795B96Tr42avg	10.1.120.10	45900	10.1.60.3	21	<unknown>	<hidden>	PASV	-	-	-	0	226 Transfer complete.	-	-	-	-	-
+1491786302.901733	CzEp795B96Tr42avg	10.1.120.10	45900	10.1.60.3	21	<unknown>	<hidden>	PASV	-	-	-	0	227 Entering Passive Mode (10,1,60,3,151,62).	-	-	-	-	-
+1491786302.948018	CzEp795B96Tr42avg	10.1.120.10	45900	10.1.60.3	21	<unknown>	<hidden>	RETR	ftp://10.1.60.3/./lZVmyHAw.exe	-	-	0	226 Transfer complete.	-	-	-	-	-
+1491786302.981819	CzEp795B96Tr42avg	10.1.120.10	45900	10.1.60.3	21	<unknown>	<hidden>	DELE	ftp://10.1.60.3/./lZVmyHAw.exe	-	-	0	250 Delete operation successful.	-	-	-	-	-
+1491786303.216940	Cdt2Dt2GpG9BdWBSO6	10.1.120.10	45906	10.1.60.3	21	<unknown>	-	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,191,215).	T	10.1.120.10	10.1.60.3	49111	-
+1491786306.754536	Cb648ITNrLVzbRzvk	10.1.60.100	62042	10.1.70.102	21	anonymous	-	PASV	-	-	-	227	Entering Passive Mode (10,1,70,102,72,164).	T	10.1.60.100	10.1.70.102	18596	-
+1491786306.798768	Cb648ITNrLVzbRzvk	10.1.60.100	62042	10.1.70.102	21	anonymous	-	STOR	ftp://10.1.70.102/./public/GBdMiJaS.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FNeMyU3616xKW7A8i1
+1491786307.041110	Cb648ITNrLVzbRzvk	10.1.60.100	62042	10.1.70.102	21	anonymous	-	PASV	-	-	-	227	Entering Passive Mode (10,1,70,102,73,173).	T	10.1.60.100	10.1.70.102	18861	FNeMyU3616xKW7A8i1
+1491786307.092884	Cb648ITNrLVzbRzvk	10.1.60.100	62042	10.1.70.102	21	anonymous	-	RETR	ftp://10.1.70.102/./public/FNM2RMIg.exe	text/plain	2	226	Transfer complete.	-	-	-	-	Fyz4FF2wjdseythfb6
+1491786307.199319	Cb648ITNrLVzbRzvk	10.1.60.100	62042	10.1.70.102	21	anonymous	-	DELE	ftp://10.1.70.102/./public/FNM2RMIg.exe	-	-	250	Delete operation successful.	-	-	-	-	Fyz4FF2wjdseythfb6
+1491786310.167752	CU8hgh4kyZzOwlOXS2	10.1.10.61	50244	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	text/plain	-	226	Transfer complete.	T	10.1.10.61	10.1.60.3	11602	Fo2hTq2GUrwR32IYRe
+1491786310.667787	CU8hgh4kyZzOwlOXS2	10.1.10.61	50244	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,196,168).	T	10.1.10.61	10.1.60.3	50344	Fo2hTq2GUrwR32IYRe
+1491786310.667819	CU8hgh4kyZzOwlOXS2	10.1.10.61	50244	10.1.60.3	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.60.3/./QHTX0Vud.exe	text/plain	0	226	Transfer complete.	-	-	-	-	FqijtKeix38RrY7Wj
+1491786310.706234	CU8hgh4kyZzOwlOXS2	10.1.10.61	50244	10.1.60.3	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.60.3/./QHTX0Vud.exe	-	-	250	Delete operation successful.	-	-	-	-	FqijtKeix38RrY7Wj
+1491786310.966335	C4mui74PfLkGEalIv3	10.1.10.61	50260	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,184,254).	T	10.1.10.61	10.1.60.3	47358	-
+1491786311.005065	C4mui74PfLkGEalIv3	10.1.10.61	50260	10.1.60.3	21	rubberneck	<hidden>	STOR	ftp://10.1.60.3/./private/zSxsHVOS.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FAu25u4ey7fPh65dbl
+1491786311.110629	C4mui74PfLkGEalIv3	10.1.10.61	50260	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,90,143).	T	10.1.10.61	10.1.60.3	23183	FAu25u4ey7fPh65dbl
+1491786311.144717	C4mui74PfLkGEalIv3	10.1.10.61	50260	10.1.60.3	21	rubberneck	<hidden>	RETR	ftp://10.1.60.3/./private/tWuFGQXh.exe	text/plain	32768	226	Transfer complete.	-	-	-	-	FuX5P9wUL81TVHVT1
+1491786311.204700	C4mui74PfLkGEalIv3	10.1.10.61	50260	10.1.60.3	21	rubberneck	<hidden>	DELE	ftp://10.1.60.3/./private/tWuFGQXh.exe	-	-	250	Delete operation successful.	-	-	-	-	FuX5P9wUL81TVHVT1
+1491786311.668915	CHYPOE4mPqGaVTSTaa	10.1.40.41	65291	10.1.60.3	21	<unknown>	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,225,128).	T	10.1.40.41	10.1.60.3	57728	-
+1491786311.673740	CHYPOE4mPqGaVTSTaa	10.1.40.41	65291	10.1.60.3	21	<unknown>	<hidden>	STOR	ftp://10.1.60.3/./private/SHoh4jWf.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FucFAu2oX6XlqQobOj
+1491786311.805125	CHYPOE4mPqGaVTSTaa	10.1.40.41	65291	10.1.60.3	21	<unknown>	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,146,202).	T	10.1.40.41	10.1.60.3	37578	FucFAu2oX6XlqQobOj
+1491786311.859303	CHYPOE4mPqGaVTSTaa	10.1.40.41	65291	10.1.60.3	21	<unknown>	<hidden>	RETR	ftp://10.1.60.3/./private/gXSMnqjG.exe	-	32768	226	Transfer complete.	-	-	-	-	FtF81j1Wn166YArhd2
+1491786311.884001	CHYPOE4mPqGaVTSTaa	10.1.40.41	65291	10.1.60.3	21	<unknown>	<hidden>	DELE	ftp://10.1.60.3/./private/gXSMnqjG.exe	-	-	250	Delete operation successful.	-	-	-	-	FtF81j1Wn166YArhd2
+1491786315.777512	C9mxlP3qzkTDhcYaa2	10.1.190.35	47954	10.1.60.3	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.60.3/./ie3iL4Yl.exe	-	3	226	Transfer complete.	-	-	-	-	-
+1491786316.635154	CaG2RasmdrAGAss6b	10.1.190.35	47962	10.1.60.3	21	rubberneck	<hidden>	RETR	ftp://10.1.60.3/./eTao6UHK.exe	-	6	226	Transfer complete.	-	-	-	-	-
+1491786320.025947	CNKg5d3XonV3p1CqS8	10.1.60.98	51438	10.1.120.5	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,120,5,13,111).	T	10.1.60.98	10.1.120.5	3439	-
+1491786320.051922	CNKg5d3XonV3p1CqS8	10.1.60.98	51438	10.1.120.5	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.120.5/./public/vusNXdqS.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FEiDGlkXHakFJahr4
+1491786320.212665	CNKg5d3XonV3p1CqS8	10.1.60.98	51438	10.1.120.5	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,120,5,13,112).	T	10.1.60.98	10.1.120.5	3440	FEiDGlkXHakFJahr4
+1491786320.221404	CNKg5d3XonV3p1CqS8	10.1.60.98	51438	10.1.120.5	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.120.5/./public/yIIzPGHn.exe	text/plain	-	226	Transfer complete.	-	-	-	-	F1DpJd4Zxsi55kvxG3
+1491786320.361657	CNKg5d3XonV3p1CqS8	10.1.60.98	51438	10.1.120.5	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.120.5/./public/yIIzPGHn.exe	-	-	250	DELE command successful.	-	-	-	-	F1DpJd4Zxsi55kvxG3
+1491786320.813577	CiZy0j38aJs7hukIHa	10.1.60.98	51446	10.1.120.5	21	<unknown>	-	PASV	-	-	-	226	Transfer complete.	-	-	-	-	-
+1491786320.813929	CiZy0j38aJs7hukIHa	10.1.60.98	51446	10.1.120.5	21	<unknown>	-	DELE	ftp://10.1.120.5/./DyCkMhOo.exe	-	-	250	DELE command successful.	-	-	-	-	-
+1491786321.386768	C12L8n1kcVa8jaB3eb	10.1.110.2	46545	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,102,156).	T	10.1.110.2	10.1.60.3	26268	-
+1491786321.454324	C12L8n1kcVa8jaB3eb	10.1.110.2	46545	10.1.60.3	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.60.3/./public/5M2mpky2.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FB9oc14odU5xJCdi3g
+1491786321.658708	C12L8n1kcVa8jaB3eb	10.1.110.2	46545	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,129,168).	T	10.1.110.2	10.1.60.3	33192	FB9oc14odU5xJCdi3g
+1491786321.730787	C12L8n1kcVa8jaB3eb	10.1.110.2	46545	10.1.60.3	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.60.3/./public/b0mVs17A.exe	text/plain	0	226	Transfer complete.	-	-	-	-	FRfzUA4Hm7V9t6GhX2
+1491786321.954362	C12L8n1kcVa8jaB3eb	10.1.110.2	46545	10.1.60.3	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.60.3/./public/b0mVs17A.exe	-	-	250	Delete operation successful.	-	-	-	-	FRfzUA4Hm7V9t6GhX2
+1491786322.397800	CK4Jr54PUqB7mx9Nx7	10.1.110.2	20685	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,208,138).	T	10.1.110.2	10.1.60.3	53386	-
+1491786322.558177	CK4Jr54PUqB7mx9Nx7	10.1.110.2	20685	10.1.60.3	21	rubberneck	<hidden>	STOR	ftp://10.1.60.3/./private/KtCIiLpy.exe	-	-	226	Transfer complete.	-	-	-	-	F4Yp1ze4LP1de1wl1
+1491786322.943914	CK4Jr54PUqB7mx9Nx7	10.1.110.2	20685	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,68,140).	T	10.1.110.2	10.1.60.3	17548	F4Yp1ze4LP1de1wl1
+1491786322.944214	CK4Jr54PUqB7mx9Nx7	10.1.110.2	20685	10.1.60.3	21	rubberneck	<hidden>	RETR	ftp://10.1.60.3/./private/jL00rcFV.exe	-	0	226	Transfer complete.	-	-	-	-	FqbJJM3y9jWBvluPjl
+1491786323.001545	CK4Jr54PUqB7mx9Nx7	10.1.110.2	20685	10.1.60.3	21	rubberneck	<hidden>	DELE	ftp://10.1.60.3/./private/jL00rcFV.exe	-	-	250	Delete operation successful.	-	-	-	-	FqbJJM3y9jWBvluPjl
+1491786324.512672	CvPQzx3T2yaFfs4ON	10.1.60.101	53525	10.1.110.2	21	anonymous	-	PASV	-	-	-	227	Entering Passive Mode (10,1,110,2,254,64)	T	10.1.60.101	10.1.110.2	65088	-
+1491786324.561131	CvPQzx3T2yaFfs4ON	10.1.60.101	53525	10.1.110.2	21	anonymous	-	STOR	ftp://10.1.110.2/./public/6KGp1pbH.exe	text/plain	-	226	0.083 seconds (measured here), 387.52 Kbytes per second	-	-	-	-	F08G2T1AB3viRIkx42
+1491786324.713201	CvPQzx3T2yaFfs4ON	10.1.60.101	53525	10.1.110.2	21	anonymous	-	PASV	-	-	-	227	Entering Passive Mode (10,1,110,2,254,34)	T	10.1.60.101	10.1.110.2	65058	F08G2T1AB3viRIkx42
+1491786324.799084	CvPQzx3T2yaFfs4ON	10.1.60.101	53525	10.1.110.2	21	anonymous	-	RETR	ftp://10.1.110.2/./public/do8QTt9z.exe	text/plain	32	226	0.000 seconds (measured here), 106.65 Mbytes per second	-	-	-	-	FxcouR1b4Gfd8yWmn1
+1491786324.858055	CvPQzx3T2yaFfs4ON	10.1.60.101	53525	10.1.110.2	21	anonymous	-	DELE	ftp://10.1.110.2/./public/do8QTt9z.exe	-	-	250	Deleted do8QTt9z.exe	-	-	-	-	FxcouR1b4Gfd8yWmn1
+1491786325.172349	C82bvG33pPFmExR5pk	10.1.60.101	53529	10.1.110.2	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,110,2,215,138)	T	10.1.60.101	10.1.110.2	55178	-
+1491786325.207291	C82bvG33pPFmExR5pk	10.1.60.101	53529	10.1.110.2	21	rubberneck	<hidden>	STOR	ftp://10.1.110.2/./private/2SKWEIRS.exe	text/plain	-	350	RNFR accepted - file exists, ready for destination	-	-	-	-	Fe6sZi1ncvQWjFWukj
+1491786326.757953	C82bvG33pPFmExR5pk	10.1.60.101	53529	10.1.110.2	21	rubberneck	<hidden>	DELE	ftp://10.1.110.2/./private/X7rbNhpb.exe	-	-	250	Deleted X7rbNhpb.exe	-	-	-	-	Fe6sZi1ncvQWjFWukj
+1491786330.682279	CVtAZW31y2REOARbK2	10.1.60.100	62089	10.1.120.5	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,120,5,13,119).	T	10.1.60.100	10.1.120.5	3447	-
+1491786330.774247	CVtAZW31y2REOARbK2	10.1.60.100	62089	10.1.120.5	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.120.5/./public/UIhSg1cv.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FWgPgI3pAspaEi5DEl
+1491786331.080396	CVtAZW31y2REOARbK2	10.1.60.100	62089	10.1.120.5	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,120,5,13,120).	T	10.1.60.100	10.1.120.5	3448	FWgPgI3pAspaEi5DEl
+1491786331.174840	CVtAZW31y2REOARbK2	10.1.60.100	62089	10.1.120.5	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.120.5/./public/z3H6XhAO.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FULaFl1vAZCGgdGxJc
+1491786331.491468	CVtAZW31y2REOARbK2	10.1.60.100	62089	10.1.120.5	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.120.5/./public/z3H6XhAO.exe	-	-	250	DELE command successful.	-	-	-	-	FULaFl1vAZCGgdGxJc
+1491786331.872322	CM5jEstTR4DPPvfyl	10.1.60.100	62092	10.1.120.5	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,120,5,13,121).	T	10.1.60.100	10.1.120.5	3449	-
+1491786332.091371	CM5jEstTR4DPPvfyl	10.1.60.100	62092	10.1.120.5	21	rubberneck	<hidden>	STOR	ftp://10.1.120.5/./private/3eTrJUmt.exe	text/plain	-	125	Data connection already open; Transfer starting.	-	-	-	-	FBeS0H1f3bwK7q4vZa
+1491786332.182303	CM5jEstTR4DPPvfyl	10.1.60.100	62092	10.1.120.5	21	rubberneck	<hidden>	PASV	-	-	-	226	Transfer complete.	-	-	-	-	FBeS0H1f3bwK7q4vZa
+1491786332.509654	CKH46v1krMfb50Arcd	10.1.40.125	36470	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	226	Transfer complete.	T	10.1.40.125	10.1.60.3	24815	-
+1491786336.567130	Cb8NHL329GOCOHvxV5	10.1.60.100	62126	10.2.32.35	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,32,35,138,162)	T	10.1.60.100	10.2.32.35	35490	-
+1491786336.567130	Cb8NHL329GOCOHvxV5	10.1.60.100	62126	10.2.32.35	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,32,35,138,162)	-	-	-	-	-
+1491786341.866503	CHw8rrjtsMsDNmCRh	10.1.100.2	54403	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,102,30).	T	10.1.100.2	10.1.60.3	26142	-
+1491786341.907303	CHw8rrjtsMsDNmCRh	10.1.100.2	54403	10.1.60.3	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.60.3/./public/dDYyZ1Of.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FAM2Xu38tldmtqao8k
+1491786342.198338	CHw8rrjtsMsDNmCRh	10.1.100.2	54403	10.1.60.3	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.60.3/./public/SxArx4K9.exe	-	-	250	Delete operation successful.	-	-	-	-	FAM2Xu38tldmtqao8k
+1491786342.221074	CH53diKQyaOYRvnNk	10.1.60.99	47364	10.2.117.6	21	anonymous	-	PASV	-	-	-	227	Entering Passive Mode (10,2,117,6,166,16)	T	10.1.60.99	10.2.117.6	42512	-
+1491786342.249940	CH53diKQyaOYRvnNk	10.1.60.99	47364	10.2.117.6	21	anonymous	-	RETR	ftp://10.2.117.6/./pub/ftp.adobe.com/Welcome.msg	-	608	226	Transfer complete.	-	-	-	-	Fkc60x4T0zCyjqLVgf
+1491786342.322784	CH53diKQyaOYRvnNk	10.1.60.99	47364	10.2.117.6	21	anonymous	-	PASV	-	-	-	227	Entering Passive Mode (10,2,117,6,177,214)	T	10.1.60.99	10.2.117.6	45526	Fkc60x4T0zCyjqLVgf
+1491786342.601792	Cab97a28euLFtg44kg	10.1.100.2	64144	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,205,142).	T	10.1.100.2	10.1.60.3	52622	-
+1491786342.618518	Cab97a28euLFtg44kg	10.1.100.2	64144	10.1.60.3	21	rubberneck	<hidden>	STOR	ftp://10.1.60.3/./private/AOM9xBQC.exe	text/plain	-	226	Transfer complete.	-	-	-	-	F4fgn1oAkyIfnH04
+1491786342.800797	Cab97a28euLFtg44kg	10.1.100.2	64144	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,20,104).	T	10.1.100.2	10.1.60.3	5224	F4fgn1oAkyIfnH04
+1491786342.880508	Cab97a28euLFtg44kg	10.1.100.2	64144	10.1.60.3	21	rubberneck	<hidden>	RETR	ftp://10.1.60.3/./private/DfkJFc23.exe	text/plain	23	226	Transfer complete.	-	-	-	-	FNJWqc1DKGvlrSuN2g
+1491786343.029185	Cab97a28euLFtg44kg	10.1.100.2	64144	10.1.60.3	21	rubberneck	<hidden>	DELE	ftp://10.1.60.3/./private/DfkJFc23.exe	-	-	250	Delete operation successful.	-	-	-	-	FNJWqc1DKGvlrSuN2g
+1491786343.212669	CXGC1GTOtEmv9JpVe	10.1.40.125	36476	10.1.60.3	21	<unknown>	-	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,80,171).	T	10.1.40.125	10.1.60.3	20651	-
+1491786343.242861	CXGC1GTOtEmv9JpVe	10.1.40.125	36476	10.1.60.3	21	<unknown>	-	STOR	ftp://10.1.60.3/./private/F3SwoWol.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FsmtLr4EZWr7diO7l6
+1491786343.464012	CXGC1GTOtEmv9JpVe	10.1.40.125	36476	10.1.60.3	21	<unknown>	-	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,142,200).	T	10.1.40.125	10.1.60.3	36552	FsmtLr4EZWr7diO7l6
+1491786343.831513	CQaDj73fnGd7VLRcY2	10.1.100.2	55869	10.1.60.3	21	anonymous	-	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,164,50).	T	10.1.100.2	10.1.60.3	42034	-
+1491786343.831513	CQaDj73fnGd7VLRcY2	10.1.100.2	55869	10.1.60.3	21	anonymous	-	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,164,50).	-	-	-	-	-
+1491786343.994239	CQaDj73fnGd7VLRcY2	10.1.100.2	55869	10.1.60.3	21	anonymous	-	STOR	ftp://10.1.60.3/./public/8heZrG5B.exe	-	-	150	Ok to send data.	-	-	-	-	-
+1491786343.791943	C7mnFo4Rzeuyh0cCO4	10.1.60.100	62143	10.1.110.2	21	<unknown>	-	PASV	-	-	-	227	Entering Passive Mode (10,1,110,2,216,233)	T	10.1.60.100	10.1.110.2	55529	-
+1491786343.791943	C7mnFo4Rzeuyh0cCO4	10.1.60.100	62143	10.1.110.2	21	<unknown>	-	PASV	-	text/plain	-	227	Entering Passive Mode (10,1,110,2,216,233)	-	-	-	-	FQ69Tw4SdtS4rqrTcg
+1491786346.877162	CWJNnp347E86Huqfn4	10.1.100.2	63519	10.1.60.3	21	rubberneck	<hidden>	STOR	ftp://10.1.60.3/./VczM6PiF.exe	-	-	226	Transfer complete.	-	-	-	-	-
+1491786346.877162	CWJNnp347E86Huqfn4	10.1.100.2	63519	10.1.60.3	21	rubberneck	<hidden>	STOR	ftp://10.1.60.3/./VczM6PiF.exe	-	-	226	Transfer complete.	-	-	-	-	-
+1491786351.019066	ChO4x13Fk9p0nCGAW3	10.1.60.100	62152	10.1.110.2	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,110,2,240,255)	T	10.1.60.100	10.1.110.2	61695	-
+1491786351.051811	ChO4x13Fk9p0nCGAW3	10.1.60.100	62152	10.1.110.2	21	rubberneck	<hidden>	STOR	ftp://10.1.110.2/./private/jBPqJAB0.exe	text/plain	-	226	0.115 seconds (measured here), 277.74 Kbytes per second	-	-	-	-	FxKewH2la5vTj4FiAb
+1491786351.389326	ChO4x13Fk9p0nCGAW3	10.1.60.100	62152	10.1.110.2	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,110,2,215,28)	T	10.1.60.100	10.1.110.2	55068	FxKewH2la5vTj4FiAb
+1491786351.458773	ChO4x13Fk9p0nCGAW3	10.1.60.100	62152	10.1.110.2	21	rubberneck	<hidden>	RETR	ftp://10.1.110.2/./private/Ad08PcxU.exe	text/plain	32	226	0.000 seconds (measured here), 190.51 Mbytes per second	-	-	-	-	FRzzDqtXymLUFJF9h
+1491786351.741081	ChO4x13Fk9p0nCGAW3	10.1.60.100	62152	10.1.110.2	21	rubberneck	<hidden>	DELE	ftp://10.1.110.2/./private/Ad08PcxU.exe	-	-	250	Deleted Ad08PcxU.exe	-	-	-	-	FRzzDqtXymLUFJF9h
+1491786354.889599	CnWJM9Z7kaJm2imxg	10.1.190.34	47794	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,234,38).	T	10.1.190.34	10.1.60.3	59942	-
+1491786354.918965	CnWJM9Z7kaJm2imxg	10.1.190.34	47794	10.1.60.3	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.60.3/./public/FTdL7FDo.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FoHXRX2Dm5f5Ias8S8
+1491786355.384619	CnWJM9Z7kaJm2imxg	10.1.190.34	47794	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,185,207).	T	10.1.190.34	10.1.60.3	47567	FoHXRX2Dm5f5Ias8S8
+1491786355.414506	CnWJM9Z7kaJm2imxg	10.1.190.34	47794	10.1.60.3	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.60.3/./public/Yz3859j8.exe	text/plain	3859	226	Transfer complete.	-	-	-	-	FsMMlz1wJwNluldC37
+1491786355.464428	CnWJM9Z7kaJm2imxg	10.1.190.34	47794	10.1.60.3	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.60.3/./public/Yz3859j8.exe	-	-	250	Delete operation successful.	-	-	-	-	FsMMlz1wJwNluldC37
+1491786355.707347	CklXCEGKuDYEPqyEg	10.1.190.34	47952	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,37,31).	T	10.1.190.34	10.1.60.3	9503	-
+1491786355.739296	CklXCEGKuDYEPqyEg	10.1.190.34	47952	10.1.60.3	21	rubberneck	<hidden>	STOR	ftp://10.1.60.3/./private/xXO7c7e7.exe	text/plain	-	226	Transfer complete.	-	-	-	-	F200e913K1tO20eMY7
+1491786355.855586	CklXCEGKuDYEPqyEg	10.1.190.34	47952	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,194,237).	T	10.1.190.34	10.1.60.3	49901	F200e913K1tO20eMY7
+1491786355.887074	CklXCEGKuDYEPqyEg	10.1.190.34	47952	10.1.60.3	21	rubberneck	<hidden>	RETR	ftp://10.1.60.3/./private/9hgtEU2f.exe	text/plain	9	226	Transfer complete.	-	-	-	-	FQ8glU1tQjQZc6GUy3
+1491786355.951691	CklXCEGKuDYEPqyEg	10.1.190.34	47952	10.1.60.3	21	rubberneck	<hidden>	DELE	ftp://10.1.60.3/./private/9hgtEU2f.exe	-	-	250	Delete operation successful.	-	-	-	-	FQ8glU1tQjQZc6GUy3
+1491786356.551171	CuRIgu2Dhlqif5jbR6	10.1.60.98	49462	10.2.187.114	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,187,114,183,105)	T	10.1.60.98	10.2.187.114	46953	-
+1491786356.580413	CuRIgu2Dhlqif5jbR6	10.1.60.98	49462	10.2.187.114	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.187.114/./pub/ftp.lucasarts.com/Welcome.msg	-	307	226	Transfer complete.	-	-	-	-	Fm4Sco5WcsIyDi5ff
+1491786356.665296	CuRIgu2Dhlqif5jbR6	10.1.60.98	49462	10.2.187.114	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,187,114,135,153)	T	10.1.60.98	10.2.187.114	34713	Fm4Sco5WcsIyDi5ff
+1491786364.897222	CPqd3a1IJYJ1N3wjel	10.2.71.121	58996	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,108,229).	T	10.2.71.121	10.1.60.3	27877	-
+1491786364.935422	CPqd3a1IJYJ1N3wjel	10.2.71.121	58996	10.1.60.3	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.60.3/./public/DcVa9Dyq.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FuWTJaQii3kGTCkM6
+1491786365.044149	CPqd3a1IJYJ1N3wjel	10.2.71.121	58996	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,43,173).	T	10.2.71.121	10.1.60.3	11181	FuWTJaQii3kGTCkM6
+1491786365.092330	CPqd3a1IJYJ1N3wjel	10.2.71.121	58996	10.1.60.3	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.60.3/./public/eQwrCezo.exe	text/plain	32768	226	Transfer complete.	-	-	-	-	FyBixx33ZPZFfsZaae
+1491786365.148213	CPqd3a1IJYJ1N3wjel	10.2.71.121	58996	10.1.60.3	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.60.3/./public/eQwrCezo.exe	-	-	250	Delete operation successful.	-	-	-	-	FyBixx33ZPZFfsZaae
+1491786365.398331	Cc5xSi4Gtyyf9YRl13	10.1.60.99	59223	10.1.120.5	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,120,5,13,147).	T	10.1.60.99	10.1.120.5	3475	-
+1491786365.414397	CHJIun2Dlrx7Iqk5l6	10.2.71.121	58999	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,142,199).	T	10.2.71.121	10.1.60.3	36551	-
+1491786365.428214	Cc5xSi4Gtyyf9YRl13	10.1.60.99	59223	10.1.120.5	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.120.5/./public/8DGwdx87.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FKduDC24hPvyxlcr8c
+1491786365.443359	CHJIun2Dlrx7Iqk5l6	10.2.71.121	58999	10.1.60.3	21	rubberneck	<hidden>	STOR	ftp://10.1.60.3/./private/Bh2EmLv8.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FbSpJW1SR9SNYJA4i3
+1491786365.531277	Cc5xSi4Gtyyf9YRl13	10.1.60.99	59223	10.1.120.5	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,120,5,13,148).	T	10.1.60.99	10.1.120.5	3476	FKduDC24hPvyxlcr8c
+1491786365.555653	CHJIun2Dlrx7Iqk5l6	10.2.71.121	58999	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,125,80).	T	10.2.71.121	10.1.60.3	32080	FbSpJW1SR9SNYJA4i3
+1491786365.591918	CHJIun2Dlrx7Iqk5l6	10.2.71.121	58999	10.1.60.3	21	rubberneck	<hidden>	RETR	ftp://10.1.60.3/./private/mJkKK2ES.exe	text/plain	2	226	Transfer complete.	-	-	-	-	FVsKFC2AHm1m9yUkm7
+1491786365.644164	CHJIun2Dlrx7Iqk5l6	10.2.71.121	58999	10.1.60.3	21	rubberneck	<hidden>	DELE	ftp://10.1.60.3/./private/mJkKK2ES.exe	-	-	250	Delete operation successful.	-	-	-	-	FVsKFC2AHm1m9yUkm7
+1491786365.560574	Cc5xSi4Gtyyf9YRl13	10.1.60.99	59223	10.1.120.5	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.120.5/./public/yfTqRwDW.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FzDew12gcvJQfVI2K3
+1491786365.676958	Cc5xSi4Gtyyf9YRl13	10.1.60.99	59223	10.1.120.5	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.120.5/./public/yfTqRwDW.exe	-	-	250	DELE command successful.	-	-	-	-	FzDew12gcvJQfVI2K3
+1491786365.886048	Ckji1n3MB1Jk5GlNb4	10.1.60.99	59226	10.1.120.5	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,120,5,13,149).	T	10.1.60.99	10.1.120.5	3477	-
+1491786365.915008	Ckji1n3MB1Jk5GlNb4	10.1.60.99	59226	10.1.120.5	21	rubberneck	<hidden>	STOR	ftp://10.1.120.5/./private/6GXrdDGv.exe	text/plain	-	226	Transfer complete.	-	-	-	-	F4gfrcpEyhW10wZT9
+1491786366.014620	Ckji1n3MB1Jk5GlNb4	10.1.60.99	59226	10.1.120.5	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,120,5,13,150).	T	10.1.60.99	10.1.120.5	3478	F4gfrcpEyhW10wZT9
+1491786366.048204	Ckji1n3MB1Jk5GlNb4	10.1.60.99	59226	10.1.120.5	21	rubberneck	<hidden>	RETR	ftp://10.1.120.5/./private/P7iaa8e1.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FgC4U24LApiDQnU4u7
+1491786366.149472	Ckji1n3MB1Jk5GlNb4	10.1.60.99	59226	10.1.120.5	21	rubberneck	<hidden>	DELE	ftp://10.1.120.5/./private/P7iaa8e1.exe	-	-	250	DELE command successful.	-	-	-	-	FgC4U24LApiDQnU4u7
+1491786368.199062	Cb4Nc7QwtyeqZyGY2	10.1.60.101	53610	10.2.52.72	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,52,72,170,26)	T	10.1.60.101	10.2.52.72	43546	-
+1491786368.238722	Cb4Nc7QwtyeqZyGY2	10.1.60.101	53610	10.2.52.72	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.52.72/./pub/ftp.netscape.com/Welcome.msg	-	351	226	Transfer complete.	-	-	-	-	FgjtlC45C7qF4YiG9b
+1491786368.330730	Cb4Nc7QwtyeqZyGY2	10.1.60.101	53610	10.2.52.72	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,52,72,145,5)	T	10.1.60.101	10.2.52.72	37125	FgjtlC45C7qF4YiG9b
+1491786368.676788	CHXtrgRrqOcAbBm1h	10.1.120.13	50702	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,33,16).	T	10.1.120.13	10.1.60.3	8464	-
+1491786368.724359	CHXtrgRrqOcAbBm1h	10.1.120.13	50702	10.1.60.3	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.60.3/./public/JRVMTSbg.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FlYV0UUHCUmFx1Cg4
+1491786369.205818	CHXtrgRrqOcAbBm1h	10.1.120.13	50702	10.1.60.3	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.60.3/./public/rTLP54Q7.exe	-	-	250	Delete operation successful.	-	-	-	-	FlYV0UUHCUmFx1Cg4
+1491786369.521855	CZlraZ28q8KUzwE8L3	10.1.120.13	50731	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,75,31).	T	10.1.120.13	10.1.60.3	19231	-
+1491786369.563158	CZlraZ28q8KUzwE8L3	10.1.120.13	50731	10.1.60.3	21	rubberneck	<hidden>	STOR	ftp://10.1.60.3/./private/0UToIpz1.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FJdvcj1DnpVMFL8Sxg
+1491786369.706244	CZlraZ28q8KUzwE8L3	10.1.120.13	50731	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,252,33).	T	10.1.120.13	10.1.60.3	64545	FJdvcj1DnpVMFL8Sxg
+1491786369.743571	CZlraZ28q8KUzwE8L3	10.1.120.13	50731	10.1.60.3	21	rubberneck	<hidden>	RETR	ftp://10.1.60.3/./private/4LjP3RCH.exe	-	4	226	Transfer complete.	-	-	-	-	FYG6s9Vc1WhnDYcG3
+1491786369.800479	CZlraZ28q8KUzwE8L3	10.1.120.13	50731	10.1.60.3	21	rubberneck	<hidden>	DELE	ftp://10.1.60.3/./private/4LjP3RCH.exe	-	-	250	Delete operation successful.	-	-	-	-	FYG6s9Vc1WhnDYcG3
+1491786374.720180	CpZkVS3ic0aQQFoyY7	10.1.60.98	40492	10.1.100.40	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,100,40,197,194)	T	10.1.60.98	10.1.100.40	50626	-
+1491786374.795593	CpZkVS3ic0aQQFoyY7	10.1.60.98	40492	10.1.100.40	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.100.40/./public/Dw0eBxRy.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FlCCt6330Ht7r2STb6
+1491786375.191415	CpZkVS3ic0aQQFoyY7	10.1.60.98	40492	10.1.100.40	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,100,40,224,156)	T	10.1.60.98	10.1.100.40	57500	FlCCt6330Ht7r2STb6
+1491786375.248451	CpZkVS3ic0aQQFoyY7	10.1.60.98	40492	10.1.100.40	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.100.40/./public/dt2W4M5z.exe	text/plain	2	226	Transfer complete.	-	-	-	-	FI8Of811n9dWXetoWj
+1491786375.352222	CpZkVS3ic0aQQFoyY7	10.1.60.98	40492	10.1.100.40	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.100.40/./public/dt2W4M5z.exe	-	-	250	DELE command successful.	-	-	-	-	FI8Of811n9dWXetoWj
+1491786375.782417	CfcRQF1KMFVPqKy5Gk	10.1.60.99	48565	10.2.52.72	21	<unknown>	-	PASV	-	-	-	226	Transfer complete.	T	10.1.60.99	10.2.52.72	57319	-
+1491786375.782417	CfcRQF1KMFVPqKy5Gk	10.1.60.99	48565	10.2.52.72	21	<unknown>	-	PASV	-	-	-	226	Transfer complete.	-	-	-	-	-
+1491786375.782417	CfcRQF1KMFVPqKy5Gk	10.1.60.99	48565	10.2.52.72	21	<unknown>	-	PASV	-	-	-	226	Transfer complete.	-	-	-	-	-
+1491786375.963482	CDJHZLRXTvG6TYzXd	10.1.60.98	40500	10.1.100.40	21	rubberneck	<hidden>	PASV	-	-	-	0	227 Entering Passive Mode (10,1,100,40,210,160)	-	-	-	-	-
+1491786375.994239	CDJHZLRXTvG6TYzXd	10.1.60.98	40500	10.1.100.40	21	rubberneck	<hidden>	STOR	ftp://10.1.100.40/./gS9ukPjx.exe	-	-	0	226 Transfer complete.	-	-	-	-	-
+1491786376.264047	CDJHZLRXTvG6TYzXd	10.1.60.98	40500	10.1.100.40	21	rubberneck	<hidden>	PASV	-	-	-	0	227 Entering Passive Mode (10,1,100,40,217,108)	-	-	-	-	-
+1491786376.325925	CDJHZLRXTvG6TYzXd	10.1.60.98	40500	10.1.100.40	21	rubberneck	<hidden>	RETR	ftp://10.1.100.40/./GU3gYYkf.exe	-	-	0	226 Transfer complete.	-	-	-	-	-
+1491786376.531477	CDJHZLRXTvG6TYzXd	10.1.60.98	40500	10.1.100.40	21	rubberneck	<hidden>	DELE	ftp://10.1.100.40/./GU3gYYkf.exe	-	-	0	250 DELE command successful.	-	-	-	-	-
+1491786379.813956	C7Lj0F2fSlSM8SE0G7	10.1.60.100	62232	10.2.93.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,93,3,138,93)	T	10.1.60.100	10.2.93.3	35421	-
+1491786379.848078	C7Lj0F2fSlSM8SE0G7	10.1.60.100	62232	10.2.93.3	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.93.3/./pub/ftp.microsoft.com/Welcome.msg	-	276	226	Transfer complete.	-	-	-	-	FDOTGI2WXbWpYTt9G
+1491786380.069064	C7Lj0F2fSlSM8SE0G7	10.1.60.100	62232	10.2.93.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,93,3,215,247)	T	10.1.60.100	10.2.93.3	55287	FDOTGI2WXbWpYTt9G
+1491786384.278792	C9oefF2iqmOl6BKxH7	10.1.60.98	45014	10.2.146.122	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,146,122,235,192)	T	10.1.60.98	10.2.146.122	60352	-
+1491786384.318244	C9oefF2iqmOl6BKxH7	10.1.60.98	45014	10.2.146.122	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.146.122/./pub/ftp.research.att.com/Welcome.msg	-	1010	226	Transfer complete.	-	-	-	-	FJQYjj1r15wWeirZe2
+1491786384.380059	C9oefF2iqmOl6BKxH7	10.1.60.98	45014	10.2.146.122	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,146,122,228,55)	T	10.1.60.98	10.2.146.122	58423	FJQYjj1r15wWeirZe2
+1491786384.737222	CYeF6A4xyu0KC8BX32	10.1.100.2	51589	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,103,130).	T	10.1.100.2	10.1.60.3	26498	-
+1491786385.121022	CIygaI3xB7CRhZJtd	10.1.190.36	64953	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,19,237).	T	10.1.190.36	10.1.60.3	5101	-
+1491786384.798816	CYeF6A4xyu0KC8BX32	10.1.100.2	51589	10.1.60.3	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.60.3/./public/3pN54cOE.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FKgByD3blNjNjT1vV5
+1491786385.519668	CYeF6A4xyu0KC8BX32	10.1.100.2	51589	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,87,253).	T	10.1.100.2	10.1.60.3	22525	FKgByD3blNjNjT1vV5
+1491786385.146273	CIygaI3xB7CRhZJtd	10.1.190.36	64953	10.1.60.3	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.60.3/./public/sd0uMdvA.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FDsrnA2Yn7z3cb4Mgk
+1491786386.088967	CIygaI3xB7CRhZJtd	10.1.190.36	64953	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,171,19).	T	10.1.190.36	10.1.60.3	43795	FDsrnA2Yn7z3cb4Mgk
+1491786385.643427	CYeF6A4xyu0KC8BX32	10.1.100.2	51589	10.1.60.3	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.60.3/./public/KWBUbzWN.exe	-	32768	226	Transfer complete.	-	-	-	-	FaTZ9c3LIa9X53EQOg
+1491786386.099276	CIygaI3xB7CRhZJtd	10.1.190.36	64953	10.1.60.3	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.60.3/./public/o6zIXQjj.exe	-	6	226	Transfer complete.	-	-	-	-	FfA6jS1JtpPEHm3Iq
+1491786386.129223	CYeF6A4xyu0KC8BX32	10.1.100.2	51589	10.1.60.3	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.60.3/./public/KWBUbzWN.exe	-	-	250	Delete operation successful.	-	-	-	-	FaTZ9c3LIa9X53EQOg
+1491786386.153968	CIygaI3xB7CRhZJtd	10.1.190.36	64953	10.1.60.3	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.60.3/./public/o6zIXQjj.exe	-	-	250	Delete operation successful.	-	-	-	-	FfA6jS1JtpPEHm3Iq
+1491786386.254942	CvUBdl4DLIOYEg6Hb3	10.1.190.36	64956	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,246,224).	T	10.1.190.36	10.1.60.3	63200	-
+1491786386.255388	CkYrjm3Edarcs2KwFc	10.1.100.2	61206	10.1.60.3	21	rubberneck	<hidden>	PASV	-	text/plain	-	227	Entering Passive Mode (10,1,60,3,180,88).	T	10.1.100.2	10.1.60.3	46168	FDUDz34tmrYCvE4LO4
+1491786386.512740	CkYrjm3Edarcs2KwFc	10.1.100.2	61206	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,233,89).	T	10.1.100.2	10.1.60.3	59737	FDUDz34tmrYCvE4LO4
+1491786386.575287	CkYrjm3Edarcs2KwFc	10.1.100.2	61206	10.1.60.3	21	rubberneck	<hidden>	RETR	ftp://10.1.60.3/./private/ID8Ja4sC.exe	text/plain	8	226	Transfer complete.	-	-	-	-	Ftrdt72T3meWkl3ZDc
+1491786396.625255	CnCZDc1NAm7pug7WNb	10.1.60.99	45574	10.1.190.5	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,190,5,255,57)	T	10.1.60.99	10.1.190.5	65337	-
+1491786396.633572	CnCZDc1NAm7pug7WNb	10.1.60.99	45574	10.1.190.5	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.190.5/./public/eUDF7UNY.exe	text/plain	-	226	Transfer complete.	-	-	-	-	Fjtt4k2VL68UacNgEb
+1491786396.754029	CnCZDc1NAm7pug7WNb	10.1.60.99	45574	10.1.190.5	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,190,5,255,58)	T	10.1.60.99	10.1.190.5	65338	Fjtt4k2VL68UacNgEb
+1491786396.811269	CnCZDc1NAm7pug7WNb	10.1.60.99	45574	10.1.190.5	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.190.5/./public/0w71YuS8.exe	text/plain	-	226	Transfer complete.	-	-	-	-	F3IaLs13dih6rIFzNh
+1491786396.871930	CnCZDc1NAm7pug7WNb	10.1.60.99	45574	10.1.190.5	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.190.5/./public/0w71YuS8.exe	-	-	250	DELE command successful.	-	-	-	-	F3IaLs13dih6rIFzNh
+1491786397.141422	CuFuk214WoPmRtmc9f	10.1.60.99	45577	10.1.190.5	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,190,5,255,59)	T	10.1.60.99	10.1.190.5	65339	-
+1491786397.186276	CuFuk214WoPmRtmc9f	10.1.60.99	45577	10.1.190.5	21	rubberneck	<hidden>	STOR	ftp://10.1.190.5/./private/khHUa7k2.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FLIcBk4xkst4h5gveg
+1491786397.277215	CuFuk214WoPmRtmc9f	10.1.60.99	45577	10.1.190.5	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,190,5,255,60)	T	10.1.60.99	10.1.190.5	65340	FLIcBk4xkst4h5gveg
+1491786397.335127	CZMwHmcy0ROaFjLRi	10.1.60.101	53744	10.2.32.35	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,32,35,190,51)	T	10.1.60.101	10.2.32.35	48691	-
+1491786397.329997	CuFuk214WoPmRtmc9f	10.1.60.99	45577	10.1.190.5	21	rubberneck	<hidden>	RETR	ftp://10.1.190.5/./private/A5qtjMYE.exe	text/plain	-	226	Transfer complete.	-	-	-	-	Fv3kXE3w6p897SwQI
+1491786397.433537	CuFuk214WoPmRtmc9f	10.1.60.99	45577	10.1.190.5	21	rubberneck	<hidden>	DELE	ftp://10.1.190.5/./private/A5qtjMYE.exe	-	-	250	DELE command successful.	-	-	-	-	Fv3kXE3w6p897SwQI
+1491786397.381339	CZMwHmcy0ROaFjLRi	10.1.60.101	53744	10.2.32.35	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.32.35/./pub/ftp.cse.buffalo.edu/Welcome.msg	-	288	226	Transfer complete.	-	-	-	-	FfBhJt44kYnx2JaqMe
+1491786397.441619	CZMwHmcy0ROaFjLRi	10.1.60.101	53744	10.2.32.35	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,32,35,175,195)	T	10.1.60.101	10.2.32.35	44995	FfBhJt44kYnx2JaqMe
+1491786406.546113	CwxFerCRKH5I7d4dj	10.1.60.98	48834	10.1.110.2	21	rubberneck	-	PASV	-	-	-	227	Entering Passive Mode (10,1,110,2,224,11)	T	10.1.60.98	10.1.110.2	57355	-
+1491786406.580246	CwxFerCRKH5I7d4dj	10.1.60.98	48834	10.1.110.2	21	rubberneck	-	STOR	ftp://10.1.110.2/./ySyiEJeW.exe	text/plain	-	350	RNFR accepted - file exists, ready for destination	-	-	-	-	F89J4A3yfuqo4Yfxxb
+1491786406.734628	CwxFerCRKH5I7d4dj	10.1.60.98	48834	10.1.110.2	21	rubberneck	-	PASV	-	-	-	227	Entering Passive Mode (10,1,110,2,230,243)	T	10.1.60.98	10.1.110.2	59123	F89J4A3yfuqo4Yfxxb
+1491786406.774423	CwxFerCRKH5I7d4dj	10.1.60.98	48834	10.1.110.2	21	rubberneck	-	RETR	ftp://10.1.110.2/./KI4G3lNf.exe	text/plain	32	226	0.000 seconds (measured here), 204.48 Mbytes per second	-	-	-	-	FYRMrp2d0g2Czngqf6
+1491786406.840210	CwxFerCRKH5I7d4dj	10.1.60.98	48834	10.1.110.2	21	rubberneck	-	DELE	ftp://10.1.110.2/./KI4G3lNf.exe	-	-	250	Deleted KI4G3lNf.exe	-	-	-	-	FYRMrp2d0g2Czngqf6
+1491786412.964966	CwZOdt1hE1JXmpCIAi	10.1.60.99	51423	10.2.187.114	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,187,114,202,216)	T	10.1.60.99	10.2.187.114	51928	-
+1491786412.997804	CwZOdt1hE1JXmpCIAi	10.1.60.99	51423	10.2.187.114	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.187.114/./pub/ftp.lucasarts.com/Welcome.msg	-	307	226	Transfer complete.	-	-	-	-	FAO2Ax47RHA2gvh3U8
+1491786413.104265	CwZOdt1hE1JXmpCIAi	10.1.60.99	51423	10.2.187.114	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,187,114,173,232)	T	10.1.60.99	10.2.187.114	44520	FAO2Ax47RHA2gvh3U8
+1491786413.385642	CGYuWK2RIwBaQUNvB2	10.1.60.101	53779	10.1.10.40	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,10,40,136,219)	T	10.1.60.101	10.1.10.40	35035	-
+1491786413.427456	CGYuWK2RIwBaQUNvB2	10.1.60.101	53779	10.1.10.40	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.10.40/./public/yi3Hxzd3.exe	text/plain	-	226	File receive OK.	-	-	-	-	FyClvI3jdYYQajuKvl
+1491786413.599048	CGYuWK2RIwBaQUNvB2	10.1.60.101	53779	10.1.10.40	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,10,40,253,119)	T	10.1.60.101	10.1.10.40	64887	FyClvI3jdYYQajuKvl
+1491786413.601490	CGYuWK2RIwBaQUNvB2	10.1.60.101	53779	10.1.10.40	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.10.40/./public/LZpki1TD.exe	text/plain	1	250	Delete operation successful.	-	-	-	-	FxrxQE1YomzilLLvdf
+1491786419.930257	CJmqPxGOktyYePvNc	10.1.190.37	60723	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,55,132).	T	10.1.190.37	10.1.60.3	14212	-
+1491786419.952828	CJmqPxGOktyYePvNc	10.1.190.37	60723	10.1.60.3	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.60.3/./public/DBqFWtEs.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FNkyFY2yWJoatJ27T
+1491786420.670272	CJmqPxGOktyYePvNc	10.1.190.37	60723	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,231,136).	T	10.1.190.37	10.1.60.3	59272	FNkyFY2yWJoatJ27T
+1491786420.728102	CJmqPxGOktyYePvNc	10.1.190.37	60723	10.1.60.3	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.60.3/./public/ZFinklus.exe	-	32768	226	Transfer complete.	-	-	-	-	FfdSJV1mbnScGIktY5
+1491786420.748357	CJmqPxGOktyYePvNc	10.1.190.37	60723	10.1.60.3	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.60.3/./public/ZFinklus.exe	-	-	250	Delete operation successful.	-	-	-	-	FfdSJV1mbnScGIktY5
+1491786421.072121	COmBk11NCBIchw75gc	10.1.190.37	60726	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,162,250).	T	10.1.190.37	10.1.60.3	41722	-
+1491786421.083183	COmBk11NCBIchw75gc	10.1.190.37	60726	10.1.60.3	21	rubberneck	<hidden>	STOR	ftp://10.1.60.3/./private/TNXYtwgu.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FAIm8rsNyI4QP3gG3
+1491786421.141774	CFzkJZ1VKhkGCQQEb6	10.1.60.100	62384	10.2.44.209	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,44,209,141,223)	T	10.1.60.100	10.2.44.209	36319	-
+1491786421.190582	COmBk11NCBIchw75gc	10.1.190.37	60726	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,248,145).	T	10.1.190.37	10.1.60.3	63633	FAIm8rsNyI4QP3gG3
+1491786421.194905	COmBk11NCBIchw75gc	10.1.190.37	60726	10.1.60.3	21	rubberneck	<hidden>	RETR	ftp://10.1.60.3/./private/j94OgqfB.exe	text/plain	94	226	Transfer complete.	-	-	-	-	F0mdqE2bZVsWpwz9N8
+1491786421.237759	COmBk11NCBIchw75gc	10.1.190.37	60726	10.1.60.3	21	rubberneck	<hidden>	DELE	ftp://10.1.60.3/./private/j94OgqfB.exe	-	-	250	Delete operation successful.	-	-	-	-	F0mdqE2bZVsWpwz9N8
+1491786421.141946	CFzkJZ1VKhkGCQQEb6	10.1.60.100	62384	10.2.44.209	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.44.209/./pub/ftp.aol.com/Welcome.msg	-	776	226	Transfer complete.	-	-	-	-	F7gFZ34BUA8ubwMjac
+1491786421.397308	CFzkJZ1VKhkGCQQEb6	10.1.60.100	62384	10.2.44.209	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,44,209,223,248)	T	10.1.60.100	10.2.44.209	57336	F7gFZ34BUA8ubwMjac
+1491786424.226846	CgYfyy1l7rUlz1DQud	10.1.60.98	41878	10.1.70.102	21	<unknown>	-	PASV	-	-	-	227	Entering Passive Mode (10,1,70,102,74,22).	T	10.1.60.98	10.1.70.102	18966	-
+1491786424.305815	CgYfyy1l7rUlz1DQud	10.1.60.98	41878	10.1.70.102	21	<unknown>	-	RETR	ftp://10.1.70.102/./9sTvmfgS.exe	text/plain	9	226	Transfer complete.	-	-	-	-	FF3ebkRdlkU9JsCRa
+1491786424.454982	CgYfyy1l7rUlz1DQud	10.1.60.98	41878	10.1.70.102	21	<unknown>	-	DELE	ftp://10.1.70.102/./9sTvmfgS.exe	-	-	250	Delete operation successful.	-	-	-	-	FF3ebkRdlkU9JsCRa
+1491786424.475305	CiBr461Syovx6ZeIVk	10.1.60.101	53810	10.2.136.213	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,136,213,189,111)	T	10.1.60.101	10.2.136.213	48495	-
+1491786424.506284	CiBr461Syovx6ZeIVk	10.1.60.101	53810	10.2.136.213	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.136.213/./pub/sunsite.unc.edu/Welcome.msg	text/plain	1393	226	Transfer complete.	-	-	-	-	FeEoi54LyuGvN7Dvyi
+1491786424.584274	CiBr461Syovx6ZeIVk	10.1.60.101	53810	10.2.136.213	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,136,213,193,161)	T	10.1.60.101	10.2.136.213	49569	FeEoi54LyuGvN7Dvyi
+1491786433.887652	Cbk5KZ2JwdurhIcpD5	10.2.149.151	54116	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,27,50).	T	10.2.149.151	10.1.60.3	6962	-
+1491786433.979336	Cbk5KZ2JwdurhIcpD5	10.2.149.151	54116	10.1.60.3	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.60.3/./public/6wBektsO.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FJoYR120x9yhych6X3
+1491786434.309519	Cbk5KZ2JwdurhIcpD5	10.2.149.151	54116	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,108,154).	T	10.2.149.151	10.1.60.3	27802	FJoYR120x9yhych6X3
+1491786434.381858	Cbk5KZ2JwdurhIcpD5	10.2.149.151	54116	10.1.60.3	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.60.3/./public/sEypqts8.exe	-	8	226	Transfer complete.	-	-	-	-	F5oGc447oQglZqtoN2
+1491786434.388509	Cbk5KZ2JwdurhIcpD5	10.2.149.151	54116	10.1.60.3	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.60.3/./public/sEypqts8.exe	-	-	250	Delete operation successful.	-	-	-	-	F5oGc447oQglZqtoN2
+1491786434.668498	C2UJky4wABVkfBfCh2	10.2.149.151	54119	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,237,106).	T	10.2.149.151	10.1.60.3	60778	-
+1491786434.668582	C2UJky4wABVkfBfCh2	10.2.149.151	54119	10.1.60.3	21	rubberneck	<hidden>	STOR	ftp://10.1.60.3/./private/Lle8dZ81.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FHFIrM2aXYZTDkR0vd
+1491786434.827170	C2UJky4wABVkfBfCh2	10.2.149.151	54119	10.1.60.3	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,134,10).	T	10.2.149.151	10.1.60.3	34314	FHFIrM2aXYZTDkR0vd
+1491786434.895239	C2UJky4wABVkfBfCh2	10.2.149.151	54119	10.1.60.3	21	rubberneck	<hidden>	RETR	ftp://10.1.60.3/./private/OXRIofl2.exe	-	2	226	Transfer complete.	-	-	-	-	FL5zWk3Fh37yzajc9l
+1491786435.058613	C2UJky4wABVkfBfCh2	10.2.149.151	54119	10.1.60.3	21	rubberneck	<hidden>	DELE	ftp://10.1.60.3/./private/OXRIofl2.exe	-	-	250	Delete operation successful.	-	-	-	-	FL5zWk3Fh37yzajc9l
+1491786443.699678	CxxFzA3QUzSpmWaaB6	10.1.60.99	44446	10.1.110.2	21	anonymous	-	PASV	-	text/plain	-	227	Entering Passive Mode (10,1,110,2,242,188)	T	10.1.60.99	10.1.110.2	62140	FQ8D1Q1s56xunQd43
+1491786444.729037	CxxFzA3QUzSpmWaaB6	10.1.60.99	44446	10.1.110.2	21	anonymous	-	DELE	ftp://10.1.110.2/./public/cpFDlejB.exe	-	-	250	Deleted cpFDlejB.exe	-	-	-	-	FQ8D1Q1s56xunQd43
+1491786444.794020	CWExCv4CwLA7Xy9ym5	10.1.60.100	62442	10.2.225.3	21	<unknown>	-	PASV	-	-	-	227	Entering Passive Mode (10,2,225,3,224,227).	T	10.1.60.100	10.2.225.3	57571	-
+1491786444.794190	CWExCv4CwLA7Xy9ym5	10.1.60.100	62442	10.2.225.3	21	<unknown>	-	RETR	ftp://10.2.225.3/./ftp.simnet/Welcome.msg	-	-	125	Data connection already open; Transfer starting.	-	-	-	-	Fw9R2Q3z1Mllv1NG6f
+1491786459.890436	CLDRcY3oiCB84XBYr1	10.1.60.101	53891	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,203,149).	T	10.1.60.101	10.1.60.3	52117	-
+1491786459.905504	CLDRcY3oiCB84XBYr1	10.1.60.101	53891	10.1.60.3	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.60.3/./public/yTzv46l5.exe	-	-	226	Transfer complete.	-	-	-	-	FiqcKq497zz3jyZ9M7
+1491786460.141731	CLDRcY3oiCB84XBYr1	10.1.60.101	53891	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,115,126).	T	10.1.60.101	10.1.60.3	29566	FiqcKq497zz3jyZ9M7
+1491786460.147184	CLDRcY3oiCB84XBYr1	10.1.60.101	53891	10.1.60.3	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.60.3/./public/VyYl3Rhi.exe	text/plain	3	226	Transfer complete.	-	-	-	-	FgguGj1I86zD2eROH
+1491786460.249714	CLDRcY3oiCB84XBYr1	10.1.60.101	53891	10.1.60.3	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.60.3/./public/VyYl3Rhi.exe	-	-	250	Delete operation successful.	-	-	-	-	FgguGj1I86zD2eROH
+1491786460.405019	CpjyBg4UWTp9dQHIQ2	10.1.60.101	53894	10.1.60.3	21	rubberneck	<hidden>	STOR	ftp://10.1.60.3/./8AR6XuX2.exe	-	-	226	Transfer complete.	-	-	-	-	-
+1491786460.405019	CpjyBg4UWTp9dQHIQ2	10.1.60.101	53894	10.1.60.3	21	rubberneck	<hidden>	STOR	ftp://10.1.60.3/./8AR6XuX2.exe	-	-	226	Transfer complete.	-	-	-	-	-
+1491786461.564054	CSkUPM2dZVYC99LXR6	10.1.60.100	62474	10.2.32.35	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,32,35,233,230)	T	10.1.60.100	10.2.32.35	59878	-
+1491786461.610273	CSkUPM2dZVYC99LXR6	10.1.60.100	62474	10.2.32.35	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.32.35/./pub/ftp.cse.buffalo.edu/Welcome.msg	-	288	226	Transfer complete.	-	-	-	-	FfLVEifoG959I9Gia
+1491786461.873408	CSkUPM2dZVYC99LXR6	10.1.60.100	62474	10.2.32.35	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,32,35,170,38)	T	10.1.60.100	10.2.32.35	43558	FfLVEifoG959I9Gia
+1491786463.442352	Cinxev1gQplAslEN7f	10.1.40.189	56945	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,174,169).	T	10.1.40.189	10.1.60.3	44713	-
+1491786463.547042	C8J0im8E186N9W1Ri	10.1.60.97	49388	10.1.60.3	21	anonymous	chrome@example.com	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,50,71).	T	10.1.60.97	10.1.60.3	12871	-
+1491786463.442417	Cinxev1gQplAslEN7f	10.1.40.189	56945	10.1.60.3	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.60.3/./public/m7RJF7ER.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FkywBQ65Xxmarq3Rb
+1491786463.920999	Cinxev1gQplAslEN7f	10.1.40.189	56945	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,209,206).	T	10.1.40.189	10.1.60.3	53710	FkywBQ65Xxmarq3Rb
+1491786463.931212	Cinxev1gQplAslEN7f	10.1.40.189	56945	10.1.60.3	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.60.3/./public/Ti80G5Ij.exe	-	80	226	Transfer complete.	-	-	-	-	FV4RoI1iwfbc6lvYBh
+1491786463.977696	Cinxev1gQplAslEN7f	10.1.40.189	56945	10.1.60.3	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.60.3/./public/Ti80G5Ij.exe	-	-	250	Delete operation successful.	-	-	-	-	FV4RoI1iwfbc6lvYBh
+1491786463.966588	CXvC8O37tRFKwpNIV3	10.1.60.100	62481	10.1.10.40	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,10,40,102,116)	T	10.1.60.100	10.1.10.40	26228	-
+1491786463.984241	CXvC8O37tRFKwpNIV3	10.1.60.100	62481	10.1.10.40	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.10.40/./public/LjOsrJbE.exe	text/plain	-	226	File receive OK.	-	-	-	-	Fqujb51LgMUpIZHlk7
+1491786464.170460	CXvC8O37tRFKwpNIV3	10.1.60.100	62481	10.1.10.40	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,10,40,136,155)	T	10.1.60.100	10.1.10.40	34971	Fqujb51LgMUpIZHlk7
+1491786464.183423	CXvC8O37tRFKwpNIV3	10.1.60.100	62481	10.1.10.40	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.10.40/./public/wdnfeSzk.exe	text/plain	32768	226	File send OK.	-	-	-	-	Fd4sJo1otBAb8ONDh2
+1491786464.375752	CXvC8O37tRFKwpNIV3	10.1.60.100	62481	10.1.10.40	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.10.40/./public/wdnfeSzk.exe	-	-	250	Delete operation successful.	-	-	-	-	Fd4sJo1otBAb8ONDh2
+1491786464.474352	CTAxgUsmGduO7V4bi	10.1.60.100	62484	10.1.10.40	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,10,40,95,171)	T	10.1.60.100	10.1.10.40	24491	-
+1491786464.502697	CTAxgUsmGduO7V4bi	10.1.60.100	62484	10.1.10.40	21	rubberneck	<hidden>	STOR	ftp://10.1.10.40/./private/JAEyj5VQ.exe	text/plain	-	226	File receive OK.	-	-	-	-	FUWwy03Q2vVYDBtT96
+1491786464.615328	CTAxgUsmGduO7V4bi	10.1.60.100	62484	10.1.10.40	21	rubberneck	<hidden>	PASV	-	-	-	227	Entering Passive Mode (10,1,10,40,43,166)	T	10.1.60.100	10.1.10.40	11174	FUWwy03Q2vVYDBtT96
+1491786464.645351	CTAxgUsmGduO7V4bi	10.1.60.100	62484	10.1.10.40	21	rubberneck	<hidden>	RETR	ftp://10.1.10.40/./private/ORBHQWHP.exe	text/plain	32768	226	File send OK.	-	-	-	-	FeQYZM3acEwnL4IXSk
+1491786464.751896	CTAxgUsmGduO7V4bi	10.1.60.100	62484	10.1.10.40	21	rubberneck	<hidden>	DELE	ftp://10.1.10.40/./private/ORBHQWHP.exe	-	-	250	Delete operation successful.	-	-	-	-	FeQYZM3acEwnL4IXSk
+1491786465.234597	CUnwwv32hx3ilPFYga	10.1.60.99	34997	10.2.146.122	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,146,122,191,9)	T	10.1.60.99	10.2.146.122	48905	-
+1491786465.240483	CUnwwv32hx3ilPFYga	10.1.60.99	34997	10.2.146.122	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.146.122/./pub/ftp.research.att.com/Welcome.msg	-	1010	226	Transfer complete.	-	-	-	-	FBjomP1ReruIS5fgnd
+1491786465.312741	CUnwwv32hx3ilPFYga	10.1.60.99	34997	10.2.146.122	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,146,122,235,0)	T	10.1.60.99	10.2.146.122	60160	FBjomP1ReruIS5fgnd
+1491786465.475697	Cmx6wB2IgnhAOdte36	10.1.60.98	38962	10.2.225.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,225,3,224,233).	T	10.1.60.98	10.2.225.3	57577	-
+1491786465.478104	Cmx6wB2IgnhAOdte36	10.1.60.98	38962	10.2.225.3	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.225.3/./pub/ftp.simnet/Welcome.msg	-	-	226	Transfer complete.	-	-	-	-	FUYNcS1FGxhxm3FCX7
+1491786460.490763	CpjyBg4UWTp9dQHIQ2	10.1.60.101	53894	10.1.60.3	21	rubberneck	<hidden>	RETR	ftp://10.1.60.3/./EYsdKMNa.exe	-	32768	221	Goodbye.	-	-	-	-	-
+1491786465.483509	Cmx6wB2IgnhAOdte36	10.1.60.98	38962	10.2.225.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,2,225,3,224,234).	T	10.1.60.98	10.2.225.3	57578	FUYNcS1FGxhxm3FCX7
+1491786467.444016	CsviPW1VQTGnKVpIsj	10.1.60.101	53915	10.1.10.40	21	<unknown>	-	RETR	ftp://10.1.10.40/./WrEZTnGz.exe	-	32768	250	Delete operation successful.	-	-	-	-	-
+1491786467.772760	CDHL1e2EQLd9ar7Nff	10.1.60.101	53923	10.1.10.40	21	<unknown>	-	PASV	-	-	-	227	Entering Passive Mode (10,1,10,40,121,237)	T	10.1.60.101	10.1.10.40	31213	-
+1491786467.810296	CDHL1e2EQLd9ar7Nff	10.1.60.101	53923	10.1.10.40	21	<unknown>	-	STOR	ftp://10.1.10.40/./private/EFcklC7z.exe	text/plain	-	150	Ok to send data.	-	-	-	-	Fw9Fy14HHOv4J7qol3
+1491786472.918762	CPs5hs4AoBHrMq9Rn6	10.1.190.35	48800	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,166,110).	T	10.1.190.35	10.1.60.3	42606	-
+1491786472.929907	CsWQ4I391YDMoEpUd	10.1.60.99	35227	10.1.70.102	21	<unknown>	-	PASV	-	-	-	350	Ready for RNTO.	T	10.1.60.99	10.1.70.102	18979	-
+1491786472.988269	CPs5hs4AoBHrMq9Rn6	10.1.190.35	48800	10.1.60.3	21	anonymous	anonymous@hq.bluenet	STOR	ftp://10.1.60.3/./public/R7f36tOz.exe	-	-	226	Transfer complete.	-	-	-	-	-
+1491786473.762082	CPs5hs4AoBHrMq9Rn6	10.1.190.35	48800	10.1.60.3	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,100,102).	T	10.1.190.35	10.1.60.3	25702	-
+1491786473.762100	CPs5hs4AoBHrMq9Rn6	10.1.190.35	48800	10.1.60.3	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.1.60.3/./public/6BHo0MVv.exe	text/plain	6	226	Transfer complete.	-	-	-	-	FzXi7w27XrJZmOFQVf
+1491786473.787131	CPs5hs4AoBHrMq9Rn6	10.1.190.35	48800	10.1.60.3	21	anonymous	anonymous@hq.bluenet	DELE	ftp://10.1.60.3/./public/6BHo0MVv.exe	-	-	250	Delete operation successful.	-	-	-	-	FzXi7w27XrJZmOFQVf
+1491786473.800747	CifTKz1ePP18HYmCwk	10.1.190.35	48806	10.1.60.3	21	<unknown>	-	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,244,183).	T	10.1.190.35	10.1.60.3	62647	-
+1491786473.800747	CifTKz1ePP18HYmCwk	10.1.190.35	48806	10.1.60.3	21	<unknown>	-	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,244,183).	-	-	-	-	-
+1491786473.889026	CifTKz1ePP18HYmCwk	10.1.190.35	48806	10.1.60.3	21	<unknown>	-	STOR	ftp://10.1.60.3/./e6LU6YwP.exe	-	-	150	Ok to send data.	-	-	-	-	-
+1491786474.119693	CifTKz1ePP18HYmCwk	10.1.190.35	48806	10.1.60.3	21	<unknown>	-	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,238,128).	T	10.1.190.35	10.1.60.3	61056	F0AAkC4Orf6odt9vDk
+1491786474.160810	CifTKz1ePP18HYmCwk	10.1.190.35	48806	10.1.60.3	21	<unknown>	-	RETR	ftp://10.1.60.3/./EikiwzFp.exe	text/plain	32768	226	Transfer complete.	-	-	-	-	FSQz2v2aKEmSIDQedg
+1491786303.057686	CMwwnNDrcHzCeVHvj	10.1.60.99	55537	10.1.100.40	21	rubberneck	-	PASV	-	-	-	226	Transfer complete.	T	10.1.60.99	10.1.100.40	56339	F4Pi1q2xYwHGk610H6
+1491786387.072094	CkYrjm3Edarcs2KwFc	10.1.100.2	61206	10.1.60.3	21	rubberneck	<hidden>	DELE	ftp://10.1.60.3/./private/ID8Ja4sC.exe	-	-	250	Delete operation successful.	-	-	-	-	Ftrdt72T3meWkl3ZDc
+1491786332.509701	CM5jEstTR4DPPvfyl	10.1.60.100	62092	10.1.120.5	21	rubberneck	<hidden>	DELE	ftp://10.1.120.5/./private/ZJV8NQgD.exe	-	-	221	(empty)	-	-	-	-	FBeS0H1f3bwK7q4vZa
+1491786344.660054	CQaDj73fnGd7VLRcY2	10.1.100.2	55869	10.1.60.3	21	anonymous	-	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,70,208).	T	10.1.100.2	10.1.60.3	18128	FdmsmH1d0IAYWduTyk
+1491786444.794148	CUnTls213PtrEdXEh1	10.1.60.99	44449	10.1.110.2	21	rubberneck	<hidden>	STOR	ftp://10.1.110.2/./OzKiF9hv.exe	-	-	227	Entering Passive Mode (10,1,110,2,227,167)	-	-	-	-	-
+1491786183.114431	CuwGuM1XtzdzBTmSxe	10.1.60.101	53210	10.1.120.5	21	<unknown>	<hidden>	RETR	ftp://10.1.120.5/./ioedQYav.exe	-	-	125	Data connection already open; Transfer starting.	-	-	-	-	-
+1491786302.403429	CiucGl1LWt0GimeyBg	10.1.40.41	65287	10.1.60.3	21	anonymous	-	DELE	ftp://10.1.60.3/./public/YEwY5SNJ.exe	-	-	250	Delete operation successful.	-	-	-	-	-
+1491786183.124374	CRpCWz29gTYHhkKrl	10.1.60.99	45047	10.1.40.221	21	anonymous	-	STOR	ftp://10.1.40.221/./PYBBiTqO.exe	text/plain	-	226	Transfer complete.	-	-	-	-	FdJLw31eWyP4NQ0QLb
+1491786207.557808	CZERUK1d8MRkgcv82d	10.1.60.98	57262	10.2.44.209	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.44.209/./Welcome.msg	-	-	227	Entering Passive Mode (10,2,44,209,167,144)	-	-	-	-	-
+1491786260.285344	CssgLd4Kd6WCYVy7p	10.1.60.99	59554	10.2.93.3	21	<unknown>	-	PASV	-	-	-	226	Transfer complete.	-	-	-	-	-
+1491786219.064491	Csi0Ay3jV64A5RIKT	10.1.60.100	61687	10.2.225.3	21	<unknown>	-	PASV	-	text/plain	-	227	Entering Passive Mode (10,2,225,3,224,131).	T	10.1.60.100	10.2.225.3	57475	FxnIYc4Ho9aloAA6J9
+1491786243.969771	CWIJ8vdbfKNRW6R8i	10.1.60.101	53340	10.1.60.3	21	<unknown>	-	STOR	ftp://10.1.60.3/./k7n3BunM.exe	-	-	150	Ok to send data.	-	-	-	-	-
+1491786296.387623	CUYyNC2AtiGfBNYR76	10.1.10.75	54176	10.1.60.3	21	rubberneck	<hidden>	STOR	ftp://10.1.60.3/./private/Ok7m7PHM.exe	text/plain	-	150	Ok to send data.	-	-	-	-	FLVhm15R4XeVskFVe
+1491786440.632314	Cckcns1TSwxllvSrUe	10.1.60.98	35154	10.2.107.205	21	anonymous	-	PASV	-	-	-	250	CWD command successful.	-	-	-	-	-
+1491786473.389189	CsWQ4I391YDMoEpUd	10.1.60.99	35227	10.1.70.102	21	<unknown>	-	PASV	-	-	-	226	Transfer complete.	-	-	-	-	-
+1491786296.531361	CxKVuZ3MXxVOfHkzw1	10.1.60.101	53467	10.1.70.102	21	anonymous	-	PASV	-	-	-	227	Entering Passive Mode (10,1,70,102,74,196).	T	10.1.60.101	10.1.70.102	19140	FRHHUV3cOjUQo1WAD5
+1491786467.964251	CDHL1e2EQLd9ar7Nff	10.1.60.101	53923	10.1.10.40	21	<unknown>	-	PASV	-	-	-	250	Rename successful.	-	-	-	-	Fw9Fy14HHOv4J7qol3
+1491786316.658126	CaG2RasmdrAGAss6b	10.1.190.35	47962	10.1.60.3	21	rubberneck	<hidden>	DELE	ftp://10.1.60.3/./eTao6UHK.exe	-	-	226	Transfer complete.	-	-	-	-	-
+1491786344.683306	C7mnFo4Rzeuyh0cCO4	10.1.60.100	62143	10.1.110.2	21	<unknown>	-	PASV	-	-	-	250	File successfully renamed or moved	-	-	-	-	FQ69Tw4SdtS4rqrTcg
+1491786303.231089	Cdt2Dt2GpG9BdWBSO6	10.1.120.10	45906	10.1.60.3	21	<unknown>	-	RETR	ftp://10.1.60.3/./FAm1o9Sp.exe	text/plain	1	226	Transfer complete.	-	-	-	-	FeqWlr3Nv2eboHTezk
+1491786474.208253	CifTKz1ePP18HYmCwk	10.1.190.35	48806	10.1.60.3	21	<unknown>	-	DELE	ftp://10.1.60.3/./EikiwzFp.exe	-	-	250	Delete operation successful.	-	-	-	-	FSQz2v2aKEmSIDQedg
+1491786343.525146	CXGC1GTOtEmv9JpVe	10.1.40.125	36476	10.1.60.3	21	<unknown>	-	RETR	ftp://10.1.60.3/./private/mZLa05Ix.exe	text/plain	5	226	Transfer complete.	-	-	-	-	FaTG5x4UeCXk1pqkHf
+1491786183.436091	CEiRIr2EMgym4apxQd	10.1.60.100	61536	10.2.117.6	21	anonymous	-	RETR	ftp://10.2.117.6/./Welcome.msg	-	608	250	CWD command successful.	-	-	-	-	-
+1491786252.245173	CIEBrqwq6xz8uWFXe	10.1.60.98	59924	10.2.117.6	21	anonymous	anonymous@hq.bluenet	RETR	ftp://10.2.117.6/./Welcome.msg	-	608	150	Opening BINARY mode data connection for Welcome.msg (608 bytes).	-	-	-	-	-
+1491786192.959234	CPRdrm24zmcpy63nf6	10.1.60.98	43490	10.1.190.5	21	rubberneck	<hidden>	PASV	-	-	-	0	125 Data connection already open; Transfer starting.	-	-	-	-	-
+1491786253.286770	CIaW68g5uAx3AVrFj	10.1.60.98	42224	10.1.10.40	21	<unknown>	-	PASV	-	text/plain	-	227	Entering Passive Mode (10,1,10,40,150,101)	T	10.1.60.98	10.1.10.40	38501	FbYXHk3He9h9jqIUXe
+1491786406.184810	CjJwNIvEPobHLm7Wg	10.1.60.98	48828	10.1.110.2	21	anonymous	-	PASV	-	-	-	227	Entering Passive Mode (10,1,110,2,234,159)	T	10.1.60.98	10.1.110.2	60063	-
+1491786317.394210	CGqrMU3hmVrhXR1iz2	10.1.60.101	53520	10.2.150.103	21	<unknown>	-	PASV	-	-	-	250	CWD command successful.	-	-	-	-	-
+1491786252.924733	CviXjXq09nOHmowdg	10.1.60.98	42218	10.1.10.40	21	anonymous	anonymous@hq.bluenet	PASV	-	-	-	227	Entering Passive Mode (10,1,10,40,22,198)	T	10.1.60.98	10.1.10.40	5830	FbwEhD24IYnBlE4TH6
+1491786386.255291	CvUBdl4DLIOYEg6Hb3	10.1.190.36	64956	10.1.60.3	21	rubberneck	<hidden>	STOR	ftp://10.1.60.3/./private/1moWLzte.exe	text/plain	-	226	Transfer complete.	-	-	-	-	Fy5KKM28jm4IDXYQ4a
+1491786258.434214	C7kM3D4O108m4oHHx4	10.1.60.99	58804	10.1.60.3	21	<unknown>	-	PASV	-	-	-	227	Entering Passive Mode (10,1,60,3,25,124).	-	-	-	-	-
+1491786183.547427	C1jPJV16OmCgHFagnj	10.1.60.99	45050	10.1.40.221	21	rubberneck	-	PASV	-	text/plain	-	226	Transfer complete.	T	10.1.60.99	10.1.40.221	54732	FNpDF81tAhCiDk8LAl
+#close	2017-04-09-21-08-03

@@ -1,0 +1,16 @@
+filter{
+ if [message] =~ /^#/ {
+   drop { }
+ }
+ else {
+  if [type] == /home/klim/MegaDev_Capstone/bro/BroLogs/ftp.log {
+	grok {
+		match => [
+			"message", "(?:-|%{UNIX_TIME:ts})\t(?:-|%{WORD:uid})\t(?:-|%{IP:id.orig_h})\t(?:-|%{POSINT:id.orig_p})\t(?:-|%{IP:id.resp_h})\t(?:-|%{POSINT:id.resp_p})\t(?:-|%{WORD:user})\t(?:-|%{WORD:password})\t(?:-|%{WORD:command})\t(?:-|%{WORD:arg})\t(?:-|%{WORD:mime_type})\t(?:-|%{BASE10NUM:file_size})\t(?:-|%{BASE10NUM:reply_code})\t(?:-|%{WORD:reply_msg})\t(?:-|%{BOOL:data_channel.passive})\t(?:-|%{IP:data_channel.orig_h})\t(?:-|%{IP:data_channel.resp_h})\t(?:-|%{POSINT:data_channel.resp_p})\t(?:-|%{WORD:fuid})",
+			"message", "%{GREEDYDATA:request}"
+			]
+		}
+	}
+ }
+}
+

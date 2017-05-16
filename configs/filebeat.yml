@@ -1,0 +1,35 @@
+filebeat:
+  prospectors:
+    -
+      paths:
+        - /var/log/cron
+        - /var/log/messages
+        - /var/log/secure
+      input_type: log
+      document_type: cron_mesg_sec_log
+
+    -
+      paths:
+        - /var/log/dmesg
+      input_type: log
+      document_type: dmesg_log
+
+    -
+      paths:
+        - /var/log/audit/audit.log
+      input_type: log
+      document_type: audit_log
+
+  registry_file: /var/lib/filebeat/registry
+
+output:
+  logstash:
+    hosts: ["logserver.usma.bluenet:5044"]
+    tls:
+      # Ensure CA cert. installed at:
+      # /etc/pki/ca-trust/source/anchors/usma/bluenet.crt
+      # and loaded using "update-ca-trust".
+      certificate: "/etc/pki/tls/certs/logstash-logserver.crt"
+      certificate_key: "/etc/pki/client/logstash-logserver.key"
+
+shipper:

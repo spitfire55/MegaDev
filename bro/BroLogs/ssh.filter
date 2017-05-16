@@ -1,0 +1,16 @@
+filter{
+ if [message] =~ /^#/ {
+   drop { }
+ }
+ else {
+  if [type] == /home/klim/MegaDev_Capstone/bro/BroLogs/ssh.log {
+	grok {
+		match => [
+			"message", "(?:-|%{UNIX_TIME:ts})\t(?:-|%{WORD:uid})\t(?:-|%{IP:id.orig_h})\t(?:-|%{POSINT:id.orig_p})\t(?:-|%{IP:id.resp_h})\t(?:-|%{POSINT:id.resp_p})\t(?:-|%{BASE10NUM:version})\t(?:-|%{BOOL:auth_success})\t(?:-|%{WORD:direction})\t(?:-|%{WORD:client})\t(?:-|%{WORD:server})\t(?:-|%{WORD:cipher_alg})\t(?:-|%{WORD:mac_alg})\t(?:-|%{WORD:compression_alg})\t(?:-|%{WORD:kex_alg})\t(?:-|%{WORD:host_key_alg})\t(?:-|%{WORD:host_key})",
+			"message", "%{GREEDYDATA:request}"
+			]
+		}
+	}
+ }
+}
+

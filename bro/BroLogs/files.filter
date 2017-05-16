@@ -1,0 +1,16 @@
+filter{
+ if [message] =~ /^#/ {
+   drop { }
+ }
+ else {
+  if [type] == /home/klim/MegaDev_Capstone/bro/BroLogs/files.log {
+	grok {
+		match => [
+			"message", "(?:-|%{UNIX_TIME:ts})\t(?:-|%{WORD:fuid})\t(?:-|%{DATA:tx_hosts})\t(?:-|%{DATA:rx_hosts})\t(?:-|%{DATA:conn_uids})\t(?:-|%{WORD:source})\t(?:-|%{BASE10NUM:depth})\t(?:-|%{DATA:analyzers})\t(?:-|%{WORD:mime_type})\t(?:-|%{WORD:filename})\t(?:-|%{WORD:duration})\t(?:-|%{BOOL:local_orig})\t(?:-|%{BOOL:is_orig})\t(?:-|%{BASE10NUM:seen_bytes})\t(?:-|%{BASE10NUM:total_bytes})\t(?:-|%{BASE10NUM:missing_bytes})\t(?:-|%{BASE10NUM:overflow_bytes})\t(?:-|%{BOOL:timedout})\t(?:-|%{WORD:parent_fuid})\t(?:-|%{WORD:md5})\t(?:-|%{WORD:sha1})\t(?:-|%{WORD:sha256})\t(?:-|%{WORD:extracted})",
+			"message", "%{GREEDYDATA:request}"
+			]
+		}
+	}
+ }
+}
+

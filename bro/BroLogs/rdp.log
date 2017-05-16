@@ -1,0 +1,28 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	rdp
+#open	2017-04-09-21-03-21
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	cookie	result	security_protocol	keyboard_layout	client_build	client_name	client_dig_product_id	desktop_width	desktop_height	requested_color_depth	cert_type	cert_count	cert_permanent	encryption_level	encryption_method
+#types	time	string	addr	port	addr	port	string	string	string	string	string	string	string	count	count	string	string	count	bool	string	string
+1491786196.316984	CHGIwN3nFNu6gInUC	10.1.60.98	49058	10.1.60.100	3389	-	encrypted	HYBRID	-	-	-	-	-	-	-	-	0	-	-	-
+1491786196.463483	ChwG7F4vB6VTKj9FG4	10.1.60.99	39103	10.1.60.101	3389	-	encrypted	HYBRID	-	-	-	-	-	-	-	-	0	-	-	-
+1491786214.903740	CZbjSI1p7dHKfBHDxa	10.1.60.99	38641	10.1.60.100	3389	-	encrypted	HYBRID	-	-	-	-	-	-	-	-	0	-	-	-
+1491786228.724453	CfWAeq4BYldJedMfX4	10.1.60.98	51078	10.1.60.101	3389	-	encrypted	HYBRID	-	-	-	-	-	-	-	-	0	-	-	-
+1491786239.907165	CT63156vO1Nk7JDxh	10.1.60.100	61770	10.1.60.101	3389	-	encrypted	HYBRID	-	-	-	-	-	-	-	-	0	-	-	-
+1491786243.133280	CZ6Ecu2mtYcXuyMR0e	10.1.60.98	51104	10.1.60.101	3389	-	encrypted	HYBRID	-	-	-	-	-	-	-	-	0	-	-	-
+1491786272.163287	CqW3qi1rIBQ5rvGKgc	10.1.60.99	38874	10.1.60.100	3389	-	encrypted	HYBRID	-	-	-	-	-	-	-	-	0	-	-	-
+1491786291.041533	ClgcuA13D7oBpspKBd	10.1.60.98	49584	10.1.60.100	3389	-	encrypted	HYBRID	-	-	-	-	-	-	-	-	0	-	-	-
+1491786311.608415	CWOomP3PFD6Tuxc8a2	10.1.60.99	38911	10.1.60.100	3389	-	encrypted	HYBRID	-	-	-	-	-	-	-	-	0	-	-	-
+1491786313.670727	CF1fih4bv4sPDqUPS2	10.1.60.98	51514	10.1.60.101	3389	-	encrypted	HYBRID	-	-	-	-	-	-	-	-	0	-	-	-
+1491786327.269172	CgrAuG2CCJdbHPuAT4	10.1.60.99	39565	10.1.60.101	3389	-	encrypted	HYBRID	-	-	-	-	-	-	-	-	0	-	-	-
+1491786369.942135	CLBWtx1YGayLlZ75Xi	10.1.60.98	51738	10.1.60.101	3389	-	encrypted	HYBRID	-	-	-	-	-	-	-	-	0	-	-	-
+1491786380.331062	CILad5UcVqp6aEQ2c	10.1.60.100	62241	10.1.60.101	3389	-	encrypted	HYBRID	-	-	-	-	-	-	-	-	0	-	-	-
+1491786407.737140	C9dyMY1tSQix9yUPEj	10.1.60.99	39783	10.1.60.101	3389	-	encrypted	HYBRID	-	-	-	-	-	-	-	-	0	-	-	-
+1491786413.480222	CjPd2s3JNvECoUx288	10.1.60.101	53778	10.1.60.100	3389	-	encrypted	HYBRID	-	-	-	-	-	-	-	-	0	-	-	-
+1491786415.452669	CcE1eU1G9pxZbU2YQb	10.1.60.99	39822	10.1.60.101	3389	-	encrypted	HYBRID	-	-	-	-	-	-	-	-	0	-	-	-
+1491786431.295675	Cjkh0s1XeFiTnVGkTe	10.1.60.100	62390	10.1.60.101	3389	-	encrypted	HYBRID	-	-	-	-	-	-	-	-	0	-	-	-
+1491786451.554012	CcAnFR3d4RCbesaSj	10.1.60.98	52328	10.1.60.101	3389	-	encrypted	HYBRID	-	-	-	-	-	-	-	-	0	-	-	-
+1491786459.636181	CMWWC92GuozCgUgTKl	10.1.60.99	39336	10.1.60.100	3389	-	encrypted	HYBRID	-	-	-	-	-	-	-	-	0	-	-	-
+#close	2017-04-09-21-08-03

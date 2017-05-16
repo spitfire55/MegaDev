@@ -1,0 +1,29 @@
+Types of payloads
+======================
+dns/reverse_dns.txt
+dns/revers_http
+
+Types of interact modes
+======================
+dns-txt
+dns-a
+dns-6 #is this a AAAA?
+http
+
+Settings of capture
+======================
+sleep 15
+ps
+ls
+screenshot
+
+Ideas on how to look for it
+============================
+Idea 1)
+absurd amount of nonce domains i.e.
+aaab.sosorry.ca
+aaac.sosorry.ca
+...
+*.sosorry.ca
+
+

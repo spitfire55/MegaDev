@@ -1,0 +1,10 @@
+empty responses to beacons
+
+responding to a form that never existing (i.e. posting to imaginary submit.php)
+ordering of headers in request (client)
+
+lack of header in response (server) 
+
+Spoofing user agent to enable intelligent queries
+
+Abnormal get to post ratios

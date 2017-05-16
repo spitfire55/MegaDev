@@ -1,0 +1,16 @@
+filter{
+ if [message] =~ /^#/ {
+   drop { }
+ }
+ else {
+  if [type] == /home/klim/MegaDev_Capstone/bro/BroLogs/notice.log {
+	grok {
+		match => [
+			"message", "(?:-|%{UNIX_TIME:ts})\t(?:-|%{WORD:uid})\t(?:-|%{IP:id.orig_h})\t(?:-|%{POSINT:id.orig_p})\t(?:-|%{IP:id.resp_h})\t(?:-|%{POSINT:id.resp_p})\t(?:-|%{WORD:fuid})\t(?:-|%{WORD:file_mime_type})\t(?:-|%{WORD:file_desc})\t(?:-|%{WORD:proto})\t(?:-|%{WORD:note})\t(?:-|%{WORD:msg})\t(?:-|%{WORD:sub})\t(?:-|%{IP:src})\t(?:-|%{IP:dst})\t(?:-|%{POSINT:p})\t(?:-|%{BASE10NUM:n})\t(?:-|%{WORD:peer_descr})\t(?:-|%{DATA:actions})\t(?:-|%{WORD:suppress_for})\t(?:-|%{BOOL:dropped})\t(?:-|%{WORD:remote_location.country_code})\t(?:-|%{WORD:remote_location.region})\t(?:-|%{WORD:remote_location.city})\t(?:-|%{DATA:remote_location.latitude})\t(?:-|%{DATA:remote_location.longitude})",
+			"message", "%{GREEDYDATA:request}"
+			]
+		}
+	}
+ }
+}
+

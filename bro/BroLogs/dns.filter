@@ -1,0 +1,16 @@
+filter{
+ if [message] =~ /^#/ {
+   drop { }
+ }
+ else {
+  if [type] == /home/klim/MegaDev_Capstone/bro/BroLogs/dns.log {
+	grok {
+		match => [
+			"message", "(?:-|%{UNIX_TIME:ts})\t(?:-|%{WORD:uid})\t(?:-|%{IP:id.orig_h})\t(?:-|%{POSINT:id.orig_p})\t(?:-|%{IP:id.resp_h})\t(?:-|%{POSINT:id.resp_p})\t(?:-|%{WORD:proto})\t(?:-|%{BASE10NUM:trans_id})\t(?:-|%{WORD:query})\t(?:-|%{BASE10NUM:qclass})\t(?:-|%{WORD:qclass_name})\t(?:-|%{BASE10NUM:qtype})\t(?:-|%{WORD:qtype_name})\t(?:-|%{BASE10NUM:rcode})\t(?:-|%{WORD:rcode_name})\t(?:-|%{BOOL:AA})\t(?:-|%{BOOL:TC})\t(?:-|%{BOOL:RD})\t(?:-|%{BOOL:RA})\t(?:-|%{BASE10NUM:Z})\t(?:-|%{DATA:answers})\t(?:-|%{DATA:TTLs})\t(?:-|%{BOOL:rejected})",
+			"message", "%{GREEDYDATA:request}"
+			]
+		}
+	}
+ }
+}
+

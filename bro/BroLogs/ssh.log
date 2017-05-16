@@ -1,0 +1,33 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	ssh
+#open	2017-04-09-21-03-38
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	version	auth_success	direction	client	server	cipher_alg	mac_alg	compression_alg	kex_alg	host_key_alg	host_key
+#types	time	string	addr	port	addr	port	count	bool	enum	string	string	string	string	string	string	string	string
+1491786211.252459	CDNuNB2ZYXLK9YcNx	10.1.60.100	61681	10.1.60.98	22	2	F	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.1	aes128-ctr	hmac-sha2-256	none	diffie-hellman-group14-sha1	ssh-rsa	c4:4b:b2:51:81:29:a5:d9:a4:19:a4:18:74:a7:92:13
+1491786223.736965	CJ4fSW3etTsXIgS3c8	10.1.60.100	61696	10.1.60.99	22	2	-	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_6.6.1	aes128-ctr	hmac-md5	none	diffie-hellman-group-exchange-sha256	ssh-rsa	-
+1491786264.262371	C4JPSa2LRZFVHmE6Nc	10.1.60.34	57949	10.1.60.98	22	2	T	-	SSH-2.0-PuTTY_Release_0.66	SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.1	aes128-ctr	hmac-sha2-256	none	diffie-hellman-group-exchange-sha256	ssh-rsa	c4:4b:b2:51:81:29:a5:d9:a4:19:a4:18:74:a7:92:13
+1491786262.188720	CkfXet4lnseHC7uJT1	10.1.60.101	53425	10.1.60.98	22	2	-	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.1	aes128-ctr	hmac-sha2-256	none	diffie-hellman-group14-sha1	ssh-rsa	c4:4b:b2:51:81:29:a5:d9:a4:19:a4:18:74:a7:92:13
+1491786282.829487	C4Oe584PkTclXOxZz3	10.1.60.99	49112	10.1.60.98	22	2	F	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.1	aes128-ctr	hmac-sha2-256	none	diffie-hellman-group14-sha1	ssh-rsa	c4:4b:b2:51:81:29:a5:d9:a4:19:a4:18:74:a7:92:13
+1491786308.231701	CoGdoH3MRfrZEmZMb	10.1.60.98	60994	10.1.60.99	22	2	F	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_6.6.1	aes128-ctr	hmac-md5	none	diffie-hellman-group-exchange-sha256	ssh-rsa	1b:65:55:50:2e:0c:d2:81:ca:2a:9f:15:58:b5:88:cd
+1491786307.405170	CQrCnfJS0ydPlcFrb	10.1.60.99	49132	10.1.60.98	22	2	F	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.1	aes128-ctr	hmac-sha2-256	none	diffie-hellman-group14-sha1	ssh-rsa	c4:4b:b2:51:81:29:a5:d9:a4:19:a4:18:74:a7:92:13
+1491786321.076921	CuwdQiYhfaj2Ygs4d	10.1.60.100	62057	10.1.60.99	22	2	-	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_6.6.1	aes128-ctr	hmac-md5	none	diffie-hellman-group-exchange-sha256	ssh-rsa	1b:65:55:50:2e:0c:d2:81:ca:2a:9f:15:58:b5:88:cd
+1491786324.325757	CO6zZP2ZKnA4Y3uEH1	10.1.60.101	53526	10.1.60.98	22	2	F	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.1	aes128-ctr	hmac-sha2-256	none	diffie-hellman-group14-sha1	ssh-rsa	c4:4b:b2:51:81:29:a5:d9:a4:19:a4:18:74:a7:92:13
+1491786356.507477	CibpL9SirGXdTQtxg	10.1.60.98	32916	10.1.60.99	22	2	F	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_6.6.1	aes128-ctr	hmac-md5	none	diffie-hellman-group-exchange-sha256	ssh-rsa	1b:65:55:50:2e:0c:d2:81:ca:2a:9f:15:58:b5:88:cd
+1491786360.466180	Ce51Y22pnnKmVZwQpe	10.1.60.100	62201	10.1.60.98	22	2	F	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.1	aes128-ctr	hmac-sha2-256	none	diffie-hellman-group14-sha1	ssh-rsa	c4:4b:b2:51:81:29:a5:d9:a4:19:a4:18:74:a7:92:13
+1491786375.450175	CgpErb109vkeKP43dh	10.1.60.101	53617	10.1.60.98	22	2	F	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.1	aes128-ctr	hmac-sha2-256	none	diffie-hellman-group14-sha1	ssh-rsa	c4:4b:b2:51:81:29:a5:d9:a4:19:a4:18:74:a7:92:13
+1491786376.333894	CL9usv3pUwRmfjAhha	10.1.60.99	49344	10.1.60.98	22	2	F	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.1	aes128-ctr	hmac-sha2-256	none	diffie-hellman-group14-sha1	ssh-rsa	c4:4b:b2:51:81:29:a5:d9:a4:19:a4:18:74:a7:92:13
+1491786407.922560	CBP7eH1w94CEndZQKc	10.1.60.101	53776	10.1.60.99	22	2	F	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_6.6.1	aes128-ctr	hmac-md5	none	diffie-hellman-group-exchange-sha256	ssh-rsa	1b:65:55:50:2e:0c:d2:81:ca:2a:9f:15:58:b5:88:cd
+1491786419.174401	C5leyM1hkaap4kO43k	10.1.60.98	33138	10.1.60.99	22	2	F	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_6.6.1	aes128-ctr	hmac-md5	none	diffie-hellman-group-exchange-sha256	ssh-rsa	1b:65:55:50:2e:0c:d2:81:ca:2a:9f:15:58:b5:88:cd
+1491786420.714663	CMLlgb2ZxDesitZvYl	10.1.60.100	62383	10.1.60.98	22	2	F	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.1	aes128-ctr	hmac-sha2-256	none	diffie-hellman-group14-sha1	ssh-rsa	c4:4b:b2:51:81:29:a5:d9:a4:19:a4:18:74:a7:92:13
+1491786458.076991	CQwgpI2d0R3fi5MvT3	10.1.60.100	62464	10.1.60.99	22	2	F	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_6.6.1	aes128-ctr	hmac-md5	none	diffie-hellman-group-exchange-sha256	ssh-rsa	1b:65:55:50:2e:0c:d2:81:ca:2a:9f:15:58:b5:88:cd
+1491786253.810855	CwHxn01O6hqYPGlmy1	10.1.60.101	53363	10.1.60.99	22	2	-	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_6.6.1	aes128-ctr	hmac-md5	none	diffie-hellman-group-exchange-sha256	ssh-rsa	1b:65:55:50:2e:0c:d2:81:ca:2a:9f:15:58:b5:88:cd
+1491786271.528284	CoDMpe3GHSc7wzpRO	10.1.60.98	60860	10.1.60.99	22	2	-	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_6.6.1	aes128-ctr	hmac-md5	none	diffie-hellman-group-exchange-sha256	ssh-rsa	1b:65:55:50:2e:0c:d2:81:ca:2a:9f:15:58:b5:88:cd
+1491786298.145502	COd5azlxFzZqLabh	10.1.60.100	61996	10.1.60.98	22	2	-	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.1	aes128-ctr	hmac-sha2-256	none	diffie-hellman-group14-sha1	ssh-rsa	c4:4b:b2:51:81:29:a5:d9:a4:19:a4:18:74:a7:92:13
+1491786265.068715	COJTnq4HNUX5SMSwW4	10.1.60.34	57950	10.1.60.99	22	2	-	-	SSH-2.0-PuTTY_Release_0.66	SSH-2.0-OpenSSH_6.6.1	aes128-ctr	hmac-md5	none	diffie-hellman-group-exchange-sha256	ssh-rsa	1b:65:55:50:2e:0c:d2:81:ca:2a:9f:15:58:b5:88:cd
+1491786184.815925	CLDzfCOSs4nct7e3k	10.1.60.99	48734	10.1.60.98	22	2	-	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.1	aes128-ctr	hmac-sha2-256	none	diffie-hellman-group14-sha1	ssh-rsa	c4:4b:b2:51:81:29:a5:d9:a4:19:a4:18:74:a7:92:13
+1491786448.491310	C1yJpf1mGgJXoCZ1Bh	10.1.60.99	49531	10.1.60.98	22	2	F	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.1	aes128-ctr	hmac-sha2-256	none	diffie-hellman-group14-sha1	ssh-rsa	c4:4b:b2:51:81:29:a5:d9:a4:19:a4:18:74:a7:92:13
+1491786473.800786	CwBvtIsfMiVsjwy6f	10.1.60.101	53975	10.1.60.99	22	2	-	-	SSH-2.0-PuTTY_Release_0.63	SSH-2.0-OpenSSH_6.6.1	aes128-ctr	hmac-md5	none	diffie-hellman-group-exchange-sha256	ssh-rsa	1b:65:55:50:2e:0c:d2:81:ca:2a:9f:15:58:b5:88:cd
+#close	2017-04-09-21-08-03

@@ -1,0 +1,16 @@
+filter{
+ if [message] =~ /^#/ {
+   drop { }
+ }
+ else {
+  if [type] == /home/klim/MegaDev_Capstone/bro/BroLogs/ssl.log {
+	grok {
+		match => [
+			"message", "(?:-|%{UNIX_TIME:ts})\t(?:-|%{WORD:uid})\t(?:-|%{IP:id.orig_h})\t(?:-|%{POSINT:id.orig_p})\t(?:-|%{IP:id.resp_h})\t(?:-|%{POSINT:id.resp_p})\t(?:-|%{WORD:version})\t(?:-|%{WORD:cipher})\t(?:-|%{WORD:curve})\t(?:-|%{WORD:server_name})\t(?:-|%{BOOL:resumed})\t(?:-|%{WORD:last_alert})\t(?:-|%{WORD:next_protocol})\t(?:-|%{BOOL:established})\t(?:-|%{DATA:cert_chain_fuids})\t(?:-|%{DATA:client_cert_chain_fuids})\t(?:-|%{WORD:subject})\t(?:-|%{WORD:issuer})\t(?:-|%{WORD:client_subject})\t(?:-|%{WORD:client_issuer})",
+			"message", "%{GREEDYDATA:request}"
+			]
+		}
+	}
+ }
+}
+

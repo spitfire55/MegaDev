@@ -1,0 +1,81 @@
+#!/usr/bin/env python
+
+#Written for python 2.7
+#This is an initial  prototype on a script 
+#that will buffer a stream i.e. tail -f 
+#in to a reasonable playout
+
+#Becareful program will "drift" if stream fills buffer quicker than
+#playout can handle
+
+#Gracefully exits on CTRL-C
+
+
+import sys
+import socket
+import time
+import signal
+
+#from queue 
+import Queue
+from threading import Thread, Event
+
+
+class SignalHandler:
+    """
+    The object that will handle signals and stop the worker threads.
+    """
+    def __init__(self, workers):
+        self.workers = workers
+    def __call__(self, signum, frame):
+        stopper.set()
+        for worker in self.workers:
+            worker.join()
+        sys.exit(0)
+
+
+# A thread that produces data
+def producer(out_q):
+    while not stopper.is_set():
+        # Produce some data
+	data = sys.stdin.readline() #this handles EOF better than raw_input
+	data = data.strip()
+        if data != "": out_q.put(data) #store some data
+	#else: print out_q.qsize()
+
+# A thread that consumes data
+def consumer(in_q):
+    time.sleep(1)
+    while not stopper.is_set():
+        # Get some data
+	time.sleep(1)
+	counter = 10
+        data=""	
+	while (not in_q.empty() and counter > 0):
+        	data = in_q.get() #get data to print in FIFO order 
+		if data != "": 
+			print data
+		counter -=1
+		in_q.task_done()
+		# Indicate completion
+        if data != "": print "="*80
+    
+
+# Create the shared queue and launch both threads
+q = Queue.Queue()
+t1 = Thread(target=consumer, args=(q,))
+t2 = Thread(target=producer, args=(q,))
+
+end_sent = object()
+stopper = Event()
+handler = SignalHandler([t1,t2])
+signal.signal(signal.SIGINT, handler)
+
+t1.start()
+t2.start()
+
+#while True: signal.pause()
+while not q.empty(): 
+	signal.pause()
+q.join()
+stopper.set()

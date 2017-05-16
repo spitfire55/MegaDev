@@ -1,0 +1,16 @@
+filter{
+ if [message] =~ /^#/ {
+   drop { }
+ }
+ else {
+  if [type] == /home/klim/MegaDev_Capstone/bro/BroLogs/http.log {
+	grok {
+		match => [
+			"message", "(?:-|%{UNIX_TIME:ts})\t(?:-|%{WORD:uid})\t(?:-|%{IP:id.orig_h})\t(?:-|%{POSINT:id.orig_p})\t(?:-|%{IP:id.resp_h})\t(?:-|%{POSINT:id.resp_p})\t(?:-|%{BASE10NUM:trans_depth})\t(?:-|%{WORD:method})\t(?:-|%{WORD:host})\t(?:-|%{WORD:uri})\t(?:-|%{WORD:referrer})\t(?:-|%{WORD:user_agent})\t(?:-|%{BASE10NUM:request_body_len})\t(?:-|%{BASE10NUM:response_body_len})\t(?:-|%{BASE10NUM:status_code})\t(?:-|%{WORD:status_msg})\t(?:-|%{BASE10NUM:info_code})\t(?:-|%{WORD:info_msg})\t(?:-|%{WORD:filename})\t(?:-|%{DATA:tags})\t(?:-|%{WORD:username})\t(?:-|%{WORD:password})\t(?:-|%{DATA:proxied})\t(?:-|%{DATA:orig_fuids})\t(?:-|%{DATA:orig_mime_types})\t(?:-|%{DATA:resp_fuids})\t(?:-|%{DATA:resp_mime_types})",
+			"message", "%{GREEDYDATA:request}"
+			]
+		}
+	}
+ }
+}
+
