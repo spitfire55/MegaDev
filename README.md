@@ -2,7 +2,7 @@
 
 **Authors**: Mitchell DeRidder, Dale Lakes, Matthew Shockley
 
-**Advisors**: MAJ Klimkowski, MAJ Petullo
+**Advisors**: [MAJ Klimkowski](code@benklim.org), MAJ Petullo
 
 This repo will contain our team's code for our CS401 capstone project.
 
