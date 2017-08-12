@@ -52,6 +52,26 @@ event bro_init()
     Log::create_stream(DNSBeacon::LOG, [$columns=Info, $path="abnormal_dns"]);
 }
 
+#Input: addr
+#Output: subnet that corrosponds to the classiful network id
+function get_class_network(addy: addr): subnet {
+	if(a < 128.0.0.0){ #Class A
+
+	}
+	else if(a < 192.0.0.0){ #Class B
+
+	}	
+	else if(a < 224.0.0.0){ #Class C
+	
+	}
+	else if(a < 240.0.0.0){ #Class D
+
+	}
+	else{
+
+	} #Class E
+}
+
 # Input: Vector of subdomains
 # Output : True/False which indicates whether one of the subdomains is only 4 or more hexadecimal characters 
 function check_hex_only_subdomain(subdomains: vector of string): bool {
@@ -130,8 +150,13 @@ event dns_A_reply(c: connection, msg: dns_msg, ans: dns_answer, a: addr) {
     local server = c$id$resp_h;
     local a_reserved_event_id = 55;
     local a_reserved_event_name = "A Record Reply Reserved IP Address";
+    #TODO Get rid of this naive iteration for an more efficent lookup
+    #i.e. transform a into network id; hah table lookup 
     for (cidr in reserved_ipv4_subnets) {
-        if (a in cidr) {
+        print fmt("Address is: %s", a);
+	#TODO print fmt("foo cidr is %s", addr_to_subnet(a));
+	print fmt("cidr is %s", cidr);
+	if (a in cidr) {
             local a_reserved_abnormalrecordinfo: DNSBeacon::abnormalDnsRecord = [$event_id = a_reserved_event_id, $event_name = a_reserved_event_name, $event_artifact = fmt("%s", a)];
             local a_reserved_dnsrecordinfo: DNSBeacon::Info = [$ts=ts, $local_host=host, $remote_host=server, $abnormal=a_reserved_abnormalrecordinfo];
             Log::write(DNSBeacon::LOG, a_reserved_dnsrecordinfo);
@@ -150,7 +175,10 @@ event dns_AAAA_reply(c: connection, msg: dns_msg, ans: dns_answer, a: addr) {
     local aaaa_reserved_event_name = "AAAA Record Reply Reserved IP Address";
     #TODO: Create IPv6 array of reserved CIDRs
     for (cidr in reserved_ipv6_subnets) {
-        if (a in cidr) {
+    #TODO Get rid of this naive iteration for an more efficent lookup
+    #i.e. transform a into network id; hah table lookup 
+    #TODO Make into a function call    
+    if (a in cidr) {
             local aaaa_reserved_abnormalrecordinfo: DNSBeacon::abnormalDnsRecord = [$event_id = aaaa_reserved_event_id, $event_name = aaaa_reserved_event_name, $event_artifact = fmt("%s", a)];
             local aaaa_reserved_dnsrecordinfo: DNSBeacon::Info = [$ts=ts, $local_host=host, $remote_host=server, $abnormal=aaaa_reserved_abnormalrecordinfo];
             Log::write(DNSBeacon::LOG, aaaa_reserved_dnsrecordinfo);
