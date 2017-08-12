@@ -40,6 +40,9 @@ global whitelist_domains: set[string] = {"naples", "arpa", "bluenet", "ssg"};
 
 #Reference: https://en.wikipedia.org/wiki/Reserved_IP_addresses
 # 10.0.0.0/8 and removed b/c local traffic = many false positives
+global set_reserved_ipv4_subnets: set[subnet] = {0.0.0.0/8, 100.64.0.0/10, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24,
+192.88.99.0/24, 192.168.0.0/16, 192.18.0.0/15, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 240.0.0.0/4, 255.255.255.255/32};
+
 global reserved_ipv4_subnets = [0.0.0.0/8, 100.64.0.0/10, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24,
 192.88.99.0/24, 192.168.0.0/16, 192.18.0.0/15, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 240.0.0.0/4, 255.255.255.255/32];
 # fd00 removed b/c local traffic = many false positives
@@ -54,22 +57,26 @@ event bro_init()
 
 #Input: addr
 #Output: subnet that corrosponds to the classiful network id
-function get_class_network(addy: addr): subnet {
+function get_class_network(a: addr): subnet {
 	if(a < 128.0.0.0){ #Class A
-
+		return a/8;
 	}
 	else if(a < 192.0.0.0){ #Class B
-
+		if(a < 172.16.0.0 || a > 172.32.0.0) return a/16;
+		else return a/12;
 	}	
-	else if(a < 224.0.0.0){ #Class C
-	
+	else if(a < 224.0.0.0){
+		if(a > 192.18.0.0 && a < 192.19.0.0) return a/15;
+		else if(a > 192.168.0.0 && a < 192.169.0.0) return a/16;
+		else return a/24; #Class C
 	}
 	else if(a < 240.0.0.0){ #Class D
-
+		return a/4;
 	}
-	else{
-
-	} #Class E
+	else if(a < 255.255.255.255){ #Class E
+		return a/4;
+	}
+	else return a/32; #255.255.255.255
 }
 
 # Input: Vector of subdomains
@@ -150,18 +157,11 @@ event dns_A_reply(c: connection, msg: dns_msg, ans: dns_answer, a: addr) {
     local server = c$id$resp_h;
     local a_reserved_event_id = 55;
     local a_reserved_event_name = "A Record Reply Reserved IP Address";
-    #TODO Get rid of this naive iteration for an more efficent lookup
-    #i.e. transform a into network id; hah table lookup 
-    for (cidr in reserved_ipv4_subnets) {
-        print fmt("Address is: %s", a);
-	#TODO print fmt("foo cidr is %s", addr_to_subnet(a));
-	print fmt("cidr is %s", cidr);
-	if (a in cidr) {
+    if(get_class_network(a) in set_reserved_ipv4_subnets){
             local a_reserved_abnormalrecordinfo: DNSBeacon::abnormalDnsRecord = [$event_id = a_reserved_event_id, $event_name = a_reserved_event_name, $event_artifact = fmt("%s", a)];
             local a_reserved_dnsrecordinfo: DNSBeacon::Info = [$ts=ts, $local_host=host, $remote_host=server, $abnormal=a_reserved_abnormalrecordinfo];
             Log::write(DNSBeacon::LOG, a_reserved_dnsrecordinfo);
             c$dns$abnormal = a_reserved_abnormalrecordinfo;
-        }
     }
 }
 
