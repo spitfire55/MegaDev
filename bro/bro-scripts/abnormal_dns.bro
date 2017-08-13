@@ -49,6 +49,8 @@ global reserved_ipv4_subnets = [0.0.0.0/8, 100.64.0.0/10, 169.254.0.0/16, 172.16
 global reserved_ipv6_subnets = [[::1]/128, [::ffff:0:0]/96, [100::]/64, [64:ff9b::]/96, [2001::]/30, [2001:10::]/28, [2001:20::]/28, [2001:db8::]/32, [2002::]/16,
 [fc00::]/8, [fe80::]/10, [ff00::]/8];
 
+global dn_record_store: table[string] of set[addr];
+
 # Standard procedure to initialize custom log names abnormal_dns.log
 event bro_init()
 {
@@ -103,6 +105,25 @@ function whitelist_domain_check(subdomains: vector of string): bool {
         }
     }
     return F;
+}
+
+#Input: string representing domain name
+#Output: the top three subdomains i.e. the root and two subdomains under it
+#NOTE: will return 2 or less subdomains if the argument is less than 
+#three subdomains 
+function get_top_domains(dn: string): string {
+	local dn_vector = split_string(dn, /\./);
+	local ans = "";
+	local index = |dn_vector|-1;
+	local cnt = 0;
+	while(index > 0 && cnt < 3){
+		ans = dn_vector[index]+"."+ans;
+		index-=1;
+		cnt+=1;	
+	}
+	#TODO print fmt("%s", dn);
+	#print fmt("%s", ans);
+	return ans;
 }
 
 # DNS Request - Event IDs 40 to 59
@@ -163,7 +184,31 @@ event dns_A_reply(c: connection, msg: dns_msg, ans: dns_answer, a: addr) {
             Log::write(DNSBeacon::LOG, a_reserved_dnsrecordinfo);
             c$dns$abnormal = a_reserved_abnormalrecordinfo;
     }
+    #TODO statefull lookup
+    local top = get_top_domains(ans$query);
+    if(top in dn_record_store ){
+    	local top_set = dn_record_store[top]; 
+	add top_set[a]; #TODO check mutablity issues
+	dn_record_store[top]=top_set;     
+	}
+    else{
+	dn_record_store[top] = set(a);	    
+    }
+    #print "======================================";
+    #for(rec in dn_record_store) {
+    	#print rec, dn_record_store[rec];
+	#if (dn_record_store[i,j] == "done") break;
+    	#if (dn_record_store[i,j] == "skip") next;
+    	#print i,j;
+	#}
 }
+
+function push_ab_dns_log(c: connection, a_rsv_evnt_id: int, a_rsv_evnt_name: string, a: addr){
+	    local a_rsv_abnormalrecordinfo: DNSBeacon::abnormalDnsRecord = [$event_id = a_rsv_evnt_id, $event_name = a_rsv_evnt_name, $event_artifact = fmt("%s", a)];
+            local a_rsv_dnsrecordinfo: DNSBeacon::Info = [$ts=c$start_time, $local_host=c$id$orig_h, $remote_host=c$id$resp_h, $abnormal=a_rsv_abnormalrecordinfo];
+            Log::write(DNSBeacon::LOG, a_rsv_dnsrecordinfo);
+            c$dns$abnormal = a_rsv_abnormalrecordinfo;
+} 
 
 # EVENT ID 65 - AAAA RECORD REPLY RESERVED IP ADDRESS
 # Detects whether the IPv6 address is in reserved subnet
