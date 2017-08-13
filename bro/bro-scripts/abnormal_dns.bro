@@ -126,6 +126,13 @@ function get_top_domains(dn: string): string {
 	return ans;
 }
 
+function push_ab_dns_log(c: connection, a_rsv_evnt_id: count, a_rsv_evnt_name: string, a: addr){
+	    local a_rsv_abnormalrecordinfo: DNSBeacon::abnormalDnsRecord = [$event_id = a_rsv_evnt_id, $event_name = a_rsv_evnt_name, $event_artifact = fmt("%s", a)];
+            local a_rsv_dnsrecordinfo: DNSBeacon::Info = [$ts=c$start_time, $local_host=c$id$orig_h, $remote_host=c$id$resp_h, $abnormal=a_rsv_abnormalrecordinfo];
+            Log::write(DNSBeacon::LOG, a_rsv_dnsrecordinfo);
+            c$dns$abnormal = a_rsv_abnormalrecordinfo;
+} 
+
 # DNS Request - Event IDs 40 to 59
 # Input: DNS Request information
 # Output: Log entries that indicate one (or more) of the following abnormal signatures was found:
@@ -173,22 +180,12 @@ event dns_request(c: connection, msg:dns_msg, query: string, qtype: count, qclas
 # EVENT ID 55 - A RECORD REPLY RESERVED IP ADDRESS
 # Detects whether the IPv4 address is in reserved subnet
 event dns_A_reply(c: connection, msg: dns_msg, ans: dns_answer, a: addr) {
-    local ts = c$start_time;
-    local host = c$id$orig_h;
-    local server = c$id$resp_h;
-    local a_reserved_event_id = 55;
-    local a_reserved_event_name = "A Record Reply Reserved IP Address";
-    if(get_class_network(a) in set_reserved_ipv4_subnets){
-            local a_reserved_abnormalrecordinfo: DNSBeacon::abnormalDnsRecord = [$event_id = a_reserved_event_id, $event_name = a_reserved_event_name, $event_artifact = fmt("%s", a)];
-            local a_reserved_dnsrecordinfo: DNSBeacon::Info = [$ts=ts, $local_host=host, $remote_host=server, $abnormal=a_reserved_abnormalrecordinfo];
-            Log::write(DNSBeacon::LOG, a_reserved_dnsrecordinfo);
-            c$dns$abnormal = a_reserved_abnormalrecordinfo;
-    }
-    #TODO statefull lookup
+    if(get_class_network(a) in set_reserved_ipv4_subnets) push_ab_dns_log(c,55,"A Record Reply Reserved IP Address",a); 
     local top = get_top_domains(ans$query);
-    if(top in dn_record_store ){
+    if(top in dn_record_store){
     	local top_set = dn_record_store[top]; 
 	add top_set[a]; #TODO check mutablity issues
+	if( |top_set| > 9) push_ab_dns_log(c, 57, fmt("A Record Reply that maps too many (%s) IPs to a subdomain", |top_set|),a);
 	dn_record_store[top]=top_set;     
 	}
     else{
@@ -203,12 +200,6 @@ event dns_A_reply(c: connection, msg: dns_msg, ans: dns_answer, a: addr) {
 	#}
 }
 
-function push_ab_dns_log(c: connection, a_rsv_evnt_id: int, a_rsv_evnt_name: string, a: addr){
-	    local a_rsv_abnormalrecordinfo: DNSBeacon::abnormalDnsRecord = [$event_id = a_rsv_evnt_id, $event_name = a_rsv_evnt_name, $event_artifact = fmt("%s", a)];
-            local a_rsv_dnsrecordinfo: DNSBeacon::Info = [$ts=c$start_time, $local_host=c$id$orig_h, $remote_host=c$id$resp_h, $abnormal=a_rsv_abnormalrecordinfo];
-            Log::write(DNSBeacon::LOG, a_rsv_dnsrecordinfo);
-            c$dns$abnormal = a_rsv_abnormalrecordinfo;
-} 
 
 # EVENT ID 65 - AAAA RECORD REPLY RESERVED IP ADDRESS
 # Detects whether the IPv6 address is in reserved subnet
