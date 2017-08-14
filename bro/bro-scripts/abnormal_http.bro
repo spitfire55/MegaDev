@@ -36,6 +36,16 @@ export {
     };
 
 }
+    
+# A containter that keeps track of method counts
+type Host_Rec: record{
+	post_count:count;
+	get_count: count;
+	other_count: count;
+ }
+
+# A Map to get track of post/get state
+global method_freq_map: table[string] of host_rec;
 
 # Whitelist domains, based on benign or already blocked domains
 global whitelist_domains: set[string] = {"arpa", "bluenet", "mlg"};
@@ -61,6 +71,7 @@ function base64_subdomain(subdomains: vector of string): bool {
 
 # Input: Vector of subdomains
 # Output: True/False indicating whether any of the subdomains are whitelisted
+#TODO  Whitelist initialization script?
 function whitelist_domain_check(subdomains: vector of string): bool {
     for(i in subdomains) {
         local subdomain_string = cat(subdomains[i]);
@@ -71,14 +82,25 @@ function whitelist_domain_check(subdomains: vector of string): bool {
     return F;
 }
 
+#Input: information to log
+#Output: void function; put info in to log
+#Helper function to handle logs
+function push_ab_http_log(c: connection, evnt_id: count, evnt_name: string, art: string){
+	# Creates abnormalHTTPRecord
+	local abnormalrecordinfo: HTTPBeacon::abnormalHttpRecord = [$event_id=evnt_id, $event_name=evnt_name, $event_artifact=art];
+	# Creates abnormalInfo record
+	local httprecordinfo: HTTPBeacon::Info = [$ts=c$start_time, $local_host=c$id$orig_h, $remote_host=c$id$resp_h, $abnormal=abnormalrecordinfo];
+	# Writes log entry to our custom abnormal_http.log file
+	Log::write(HTTPBeacon::LOG, httprecordinfo);
+	# Appends abnormalHTTPRecord to standard HTTP log entry
+	c$http$abnormal = abnormalrecordinfo;
+}
+
+
 # Input: HTTP Reply information
 # Output : Log entries optionally containing abnormal event information 
 # Read Bro documentation for what fields are in connection record
 event http_reply(c:connection, version:string, code:count, reason:string) {
-    local ts = c$start_time;
-    local host = c$id$orig_h;
-    local server = c$id$resp_h;
-    # If there is a host entry in the connection record
     if (c$http?$host) {
         local subdomains = split_string(c$http$host, /\./);
         # Check to make sure none of the subdomains are whitelisted
@@ -87,17 +109,7 @@ event http_reply(c:connection, version:string, code:count, reason:string) {
             local domain_not_ip_check = match_pattern(subdomains[|subdomains|-1], /[a-zA-Z]+/);
             # If more than three subdomains and check to make sure it is a domain, not an IP address
             if (|subdomains| > 3 && domain_not_ip_check$matched){
-                local subdomain_event_id = 12;
-                local subdomain_event_name = "High number of subdomains";
-                local subdomain_event_artifact = c$http$host;
-                # Creates abnormalHTTPRecord
-                local subdomain_abnormalrecordinfo: HTTPBeacon::abnormalHttpRecord = [$event_id=subdomain_event_id, $event_name=subdomain_event_name, $event_artifact=subdomain_event_artifact];
-                # Creates abnormalInfo record
-                local subdomain_httprecordinfo: HTTPBeacon::Info = [$ts=ts, $local_host=host, $remote_host=server, $abnormal=subdomain_abnormalrecordinfo];
-                # Writes log entry to our custom abnormal_http.log file
-                Log::write(HTTPBeacon::LOG, subdomain_httprecordinfo);
-                # Appends abnormalHTTPRecord to standard HTTP log entry
-                c$http$abnormal = subdomain_abnormalrecordinfo;
+                push_ab_http_log(c, 12, "High number of subdomains", c$http$host);
             }
         }
     }
@@ -107,26 +119,23 @@ event http_reply(c:connection, version:string, code:count, reason:string) {
 # Output : Log entries optionally containing abnormal event information
 # Read Bro documentation for what fields exist in connection record
 event http_request(c: connection, method: string, original_URI: string, unescaped_URI: string, version: string) {
-    local ts = c$start_time;
-    local host = c$id$orig_h;
-    local server = c$id$resp_h;
     local base64_uri_query = find_last(unescaped_URI, base64_query_pattern);
-
     #EVENT ID 09 - BASE64 QUERY STRING
     # If the previous regexp search found a match
     if (base64_uri_query != "") {
-        local base64query_event_id = 09;
-        local base64query_event_name = "Base64 query string";
-        local base64query_event_artifact = unescaped_URI;
-        # Creates abnormalHTTPRecord
-        local base64query_abnormalrecordinfo: HTTPBeacon::abnormalHttpRecord = [$event_id=base64query_event_id, $event_name=base64query_event_name, $event_artifact=base64query_event_artifact];
-        # Creates abnormalHTTP Info record
-        local base64query_httprecordinfo: HTTPBeacon::Info = [$ts=ts, $local_host=host, $remote_host=server, $abnormal=base64query_abnormalrecordinfo];
-        # Writes abnormalHTTP record to custom log file
-        Log::write(HTTPBeacon::LOG, base64query_httprecordinfo);
-        # Appends abnormalHTTP record to standar HTTP log entry
-        c$http$abnormal = base64query_abnormalrecordinfo;
+        push_ab_http_log(c, 9,"Base64 query string", unescaped_URI); 
     }
+    #TODO EVENT ID 08 - POST/GET ASYMMETRY
+    local host_rec: Host_Rec;
+    if(c$http$host in method_freq_map) host_rec = method_freq_map[c$http$host];
+    else host_rec = Host_Rec($post_count = 0, $get_count = 0, $other_count=0);
+    if(method == "POST") host_rec$post_count += 1;
+    else if(method == "GET") host_rec$get_count += 1;
+    else host_rec$other_count+=1;
+    if( host_rec$post_count > 0 && (host_rec$get_count / (host_rec$post_count*1.0)) > 10){
+		push_ab_http_log(c, 8, "POST/GET ASYMMETRY", unescaped_URI+" "+fmt("post's: %s",host_rec$post_count)+" "+fmt("get's: %s",host_rec$get_count));	
+	}
+    method_freq_map[c$http$host] = host_rec;
 }
 
 # Initializes Bro script to write log entries to abnormal_http.log file
