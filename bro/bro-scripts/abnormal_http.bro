@@ -42,10 +42,11 @@ type Host_Rec: record{
 	post_count:count;
 	get_count: count;
 	other_count: count;
- }
+ };
 
 # A Map to get track of post/get state
-global method_freq_map: table[string] of host_rec;
+#TODO global method_freq_map: table[string] of Host_Rec;
+global method_freq_map: table[addr] of Host_Rec;
 
 # Whitelist domains, based on benign or already blocked domains
 global whitelist_domains: set[string] = {"arpa", "bluenet", "mlg"};
@@ -127,15 +128,19 @@ event http_request(c: connection, method: string, original_URI: string, unescape
     }
     #TODO EVENT ID 08 - POST/GET ASYMMETRY
     local host_rec: Host_Rec;
-    if(c$http$host in method_freq_map) host_rec = method_freq_map[c$http$host];
+    #if(c$http?$host) 
+#	print fmt("%s",c$http$uri ) ;
+#	print fmt("%s",split_string1(c$http$uri, /\/\//)[1]) ;
+    if(c$id$resp_h in method_freq_map) host_rec = method_freq_map[c$id$resp_h];
     else host_rec = Host_Rec($post_count = 0, $get_count = 0, $other_count=0);
     if(method == "POST") host_rec$post_count += 1;
     else if(method == "GET") host_rec$get_count += 1;
     else host_rec$other_count+=1;
-    if( host_rec$post_count > 0 && (host_rec$get_count / (host_rec$post_count*1.0)) > 10){
+    if( host_rec$post_count > 0 && (host_rec$get_count / (host_rec$post_count*1.0)) > 20){
 		push_ab_http_log(c, 8, "POST/GET ASYMMETRY", unescaped_URI+" "+fmt("post's: %s",host_rec$post_count)+" "+fmt("get's: %s",host_rec$get_count));	
 	}
-    method_freq_map[c$http$host] = host_rec;
+    method_freq_map[c$id$resp_h] = host_rec;
+    
 }
 
 # Initializes Bro script to write log entries to abnormal_http.log file
