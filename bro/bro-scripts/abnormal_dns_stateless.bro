@@ -49,8 +49,6 @@ global reserved_ipv4_subnets = [0.0.0.0/8, 100.64.0.0/10, 169.254.0.0/16, 172.16
 global reserved_ipv6_subnets = [[::1]/128, [::ffff:0:0]/96, [100::]/64, [64:ff9b::]/96, [2001::]/30, [2001:10::]/28, [2001:20::]/28, [2001:db8::]/32, [2002::]/16,
 [fc00::]/8, [fe80::]/10, [ff00::]/8];
 
-global dn_record_store: table[string] of set[addr];
-
 # Standard procedure to initialize custom log names abnormal_dns.log
 event bro_init()
 {
@@ -107,92 +105,84 @@ function whitelist_domain_check(subdomains: vector of string): bool {
     return F;
 }
 
-#Input: string representing domain name
-#Output: the top three subdomains i.e. the root and two subdomains under it
-#NOTE: will return 2 or less subdomains if the argument is less than 
-#three subdomains 
-function get_top_domains(dn: string): string {
-	local dn_vector = split_string(dn, /\./);
-	local ans = "";
-	local index = |dn_vector|-1;
-	if(index < 3) return dn;
-	local cnt = 0;
-	while(index >= 0 && cnt < 3){
-		ans = dn_vector[index]+"."+ans; #TODO fix trailing .
-		index-=1;
-		cnt+=1;	
-	}
-	#TODO print fmt("%s", dn);
-	#print fmt("%s", ans);
-	return ans;
-}
-
-function push_ab_dns_log(c: connection, evnt_id: count, evnt_name: string, art: string){
-	# Create abnormalDNSRecord 
-	    local abnormalrecordinfo: DNSBeacon::abnormalDnsRecord = [$event_id = evnt_id, $event_name = evnt_name, $event_artifact = art];
-        # Creates abnormalInfo record
-            local dnsrecordinfo: DNSBeacon::Info = [$ts=c$start_time, $local_host=c$id$orig_h, $remote_host=c$id$resp_h, $abnormal=abnormalrecordinfo];
-        # Write abnormalDNS record to its own log file
-            Log::write(DNSBeacon::LOG, dnsrecordinfo);
-            # Append abnormalDNS record to standard DNS log file
-            c$dns$abnormal = abnormalrecordinfo;
-} 
-
 # DNS Request - Event IDs 40 to 59
 # Input: DNS Request information
 # Output: Log entries that indicate one (or more) of the following abnormal signatures was found:
 #   - High number of subdomains
 #   - Hexadecimal subdomain
 event dns_request(c: connection, msg:dns_msg, query: string, qtype: count, qclass: count) {
+    local ts = c$start_time;
+    local host = c$id$orig_h;
+    local server = c$id$resp_h;
     local event_id = 40;
     local subdomains = split_string(query, /\./);
     local whitelisted = whitelist_domain_check(subdomains);
-    local base_domain = get_top_domains(query); #cat_sep(".", "", subdomains[|subdomains|-3], subdomains[|subdomains|-2], subdomains[|subdomains|-1]);
+
     # EVENT ID 45 - HIGH NUMBER OF SUBDOMAINS
     if ((|subdomains| > 4) && ! whitelisted) {
+        local subdomain_event_id = event_id + 5;
+        local subdomain_event_name = "High Number of Subdomains";
         # Reconstructs the subdomains to remove subdomains (i.e. foo.bar.xyz.cnn.org -> xyz.cnn.org )
-        push_ab_dns_log(c, event_id+5, "High Number of Subdomains", query+"==>"+base_domain);
+        local base_domain = cat_sep(".", "", subdomains[|subdomains|-3], subdomains[|subdomains|-2], subdomains[|subdomains|-1]);
+        # Create abnormalDNSRecord 
+        local subdomains_abnormalrecordinfo: DNSBeacon::abnormalDnsRecord = [$event_id=subdomain_event_id, $event_name=subdomain_event_name, $event_artifact=query];
+        # Creates abnormalInfo record
+        local subdomains_dnsrecordinfo: DNSBeacon::Info = [$ts=ts, $local_host=host, $remote_host=server, $abnormal=subdomains_abnormalrecordinfo];
+        # Write abnormalDNS record to its own log file
+        Log::write(DNSBeacon::LOG, subdomains_dnsrecordinfo);
+        # Append abnormalDNS record to standard DNS log file
+        c$dns$abnormal = subdomains_abnormalrecordinfo;
     }
+       
     # EVENT ID 50 - HEXADECIMAL SUBDOMAIN
     if (check_hex_only_subdomain(subdomains) && ! whitelisted) {
-        push_ab_dns_log(c, event_id+10, "Hexadecimal Subdomain", query+"==>"+base_domain);
-	}
+        local hexdomain_event_id = event_id + 10;
+        local hexdomain_event_name = "Hexadecimal Subdomain";
+        # Creates abnormalDNSRecord
+        local hexdomain_abnormalrecordinfo: DNSBeacon::abnormalDnsRecord = [$event_id=hexdomain_event_id, $event_name = hexdomain_event_name, $event_artifact=query];
+        # Creates abnormalInfo record
+        local hexdomain_dnsrecordinfo: DNSBeacon::Info = [$ts=ts, $local_host=host, $remote_host=server, $abnormal=hexdomain_abnormalrecordinfo];
+        # Writes abnormalDNS record to its own log file
+        Log::write(DNSBeacon::LOG, hexdomain_dnsrecordinfo);
+        # Append abnormalDNS record to standard DNS log file
+        c$dns$abnormal = hexdomain_abnormalrecordinfo;
+    }
 }
 
 # EVENT ID 55 - A RECORD REPLY RESERVED IP ADDRESS
 # Detects whether the IPv4 address is in reserved subnet
 event dns_A_reply(c: connection, msg: dns_msg, ans: dns_answer, a: addr) {
-    if(get_class_network(a) in set_reserved_ipv4_subnets) push_ab_dns_log(c,55,"A Record Reply Reserved IP Address",fmt("%s",a)); 
-    local top = get_top_domains(ans$query); #TODO add number parameter ?  
-    if(top in dn_record_store){
-    	local top_set = dn_record_store[top]; 
-	add top_set[a]; #TODO check mutablity issues
-	if( |top_set| > 9) push_ab_dns_log(c, 57, fmt("A Record Reply that maps too many (%s) IPs to a subdomain", |top_set|),fmt(top+" ==> %s",a));
-	dn_record_store[top]=top_set;     
-	}
-    else{
-	dn_record_store[top] = set(a);	    
+    local ts = c$start_time;
+    local host = c$id$orig_h;
+    local server = c$id$resp_h;
+    local a_reserved_event_id = 55;
+    local a_reserved_event_name = "A Record Reply Reserved IP Address";
+    if(get_class_network(a) in set_reserved_ipv4_subnets){
+            local a_reserved_abnormalrecordinfo: DNSBeacon::abnormalDnsRecord = [$event_id = a_reserved_event_id, $event_name = a_reserved_event_name, $event_artifact = fmt("%s", a)];
+            local a_reserved_dnsrecordinfo: DNSBeacon::Info = [$ts=ts, $local_host=host, $remote_host=server, $abnormal=a_reserved_abnormalrecordinfo];
+            Log::write(DNSBeacon::LOG, a_reserved_dnsrecordinfo);
+            c$dns$abnormal = a_reserved_abnormalrecordinfo;
     }
-    #print "======================================";
-    #for(rec in dn_record_store) {
-    	#print rec, dn_record_store[rec];
-	#if (dn_record_store[i,j] == "done") break;
-    	#if (dn_record_store[i,j] == "skip") next;
-    	#print i,j;
-	#}
 }
-
 
 # EVENT ID 65 - AAAA RECORD REPLY RESERVED IP ADDRESS
 # Detects whether the IPv6 address is in reserved subnet
 event dns_AAAA_reply(c: connection, msg: dns_msg, ans: dns_answer, a: addr) {
+    local ts = c$start_time;
+    local host = c$id$orig_h;
+    local server = c$id$resp_h;
+    local aaaa_reserved_event_id = 65;
+    local aaaa_reserved_event_name = "AAAA Record Reply Reserved IP Address";
     #TODO: Create IPv6 array of reserved CIDRs
     for (cidr in reserved_ipv6_subnets) {
-    	#TODO Get rid of this naive iteration for an more efficent lookup
-    	#i.e. transform a into network id; hah table lookup 
-    	#TODO Make into a function call    
-    	if (a in cidr) {
-           push_ab_dns_log(c,65,"AAAA Record Reply Reserved IP Address",fmt("%s",a)); 
+    #TODO Get rid of this naive iteration for an more efficent lookup
+    #i.e. transform a into network id; hah table lookup 
+    #TODO Make into a function call    
+    if (a in cidr) {
+            local aaaa_reserved_abnormalrecordinfo: DNSBeacon::abnormalDnsRecord = [$event_id = aaaa_reserved_event_id, $event_name = aaaa_reserved_event_name, $event_artifact = fmt("%s", a)];
+            local aaaa_reserved_dnsrecordinfo: DNSBeacon::Info = [$ts=ts, $local_host=host, $remote_host=server, $abnormal=aaaa_reserved_abnormalrecordinfo];
+            Log::write(DNSBeacon::LOG, aaaa_reserved_dnsrecordinfo);
+            c$dns$abnormal = aaaa_reserved_abnormalrecordinfo;
         }
     }
 }

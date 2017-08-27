@@ -51,6 +51,9 @@ global method_freq_map: table[addr] of Host_Rec;
 # Whitelist domains, based on benign or already blocked domains
 global whitelist_domains: set[string] = {"arpa", "bluenet", "mlg"};
 
+# Whitelist IPs Set of ip's to ignore
+global whitelist_ips: set[addr] = {10.1.60.2};
+ 
 # Base64 must be at least length 8 (or 7 with an equal or 6 with two equals)
 global base64Pattern = /([a-zA-Z0-9+\/]{4})+([A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{2}==)$/; # Magic to detect base64...
 # Detects ?id=akakb381jghs82==
@@ -135,13 +138,19 @@ event http_request(c: connection, method: string, original_URI: string, unescape
     else host_rec = Host_Rec($post_count = 0, $get_count = 0, $other_count=0);
     if(method == "POST") host_rec$post_count += 1;
     else if(method == "GET") host_rec$get_count += 1;
-    else host_rec$other_count+=1;
+    else{
+	host_rec$other_count+=1;
+     	#NOTE check weird for unknown_HTTP_method
+	}
     if( host_rec$post_count > 0 && (host_rec$get_count / (host_rec$post_count*1.0)) > 20){
-		push_ab_http_log(c, 8, "POST/GET ASYMMETRY", unescaped_URI+" "+fmt("post's: %s",host_rec$post_count)+" "+fmt("get's: %s",host_rec$get_count));	
+		local tot_count = host_rec$post_count + host_rec$get_count;
+		if( c$id$resp_h !in whitelist_ips && (tot_count < 100 || tot_count % 100 == 0))
+			push_ab_http_log(c, 8, "POST/GET ASYMMETRY", unescaped_URI+" "+fmt("post's: %s",host_rec$post_count)+" "+fmt("get's: %s",host_rec$get_count));	
 	}
     method_freq_map[c$id$resp_h] = host_rec;
     
 }
+
 
 # Initializes Bro script to write log entries to abnormal_http.log file
 event bro_init() {
