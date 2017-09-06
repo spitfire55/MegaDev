@@ -1,24 +1,23 @@
-//this program takes in a listing of domain names to frequencies and parses them
+#!/usr/bin/env scala 
 
 class DomainTrie { 
   
   def isEmpty: Boolean = (root.isEmpty && !root.canEndHere)
 
-  def apply(str: String): Boolean = { // is the string in the set?
+  def apply(str: String): Boolean = { // is the domain in the set?
     root.search(str.split(".").toList.reverse)
   }
 
-  def +=(tup: (String,String)) { // add a new string to the set
+  def +=(tup: (String,String)) { 
+    // add a new domain,freq to the set
     val listOStr: List[String] = tup._1.split('.').toList.reverse
     val freq: Int  = Integer.parseInt(tup._2)
-    //println(tup,tup._1,tup._1.split('.').toList,listOStr)
     root = root.add(listOStr, freq)
-    //println(root)  
 }
   
  def stats(levels: Int): Unit = root.printStats(levels) 
  def findCSNonceDomains(lenSubDomain: Int, thr: Double): Unit = root.findCSNonceDomains(lenSubDomain, thr)
- def buildGraph(levels: Int): Unit = root.buildGraph(levels)	
+ def buildGraph(levels: Int): Unit = ??? // TODO root.buildGraph(levels)	
 
  
  
@@ -46,7 +45,7 @@ class DomainTrie {
 	   }
 	   h(this)	
   	}
-		
+	/*	
 	def genGraphs(l: Int): Unit = {
 		val answers = buildGraphs(l)
 		for((key,sb) <- answers){
@@ -86,7 +85,7 @@ class DomainTrie {
 		}		
 	 	h(mStrlevel,this)
 		}
-
+	*/
 	def printStats(level: Int): Unit ={
 		def h(level: Int, node: T,start: String = "|___"): (String,Int) ={
 			node match {
@@ -94,9 +93,7 @@ class DomainTrie {
                         	val sb = new StringBuilder
 				var count = 0
 				if(level == 0) return ("",t.getNumSubDomains)
-				//(start+t.getNumSubDomains.toString, t.getNumSubDomains)      	
-				for((pStr,kid)<-t.children){//TODO Order
-                                        //sb.append(start+pStr+"\n")
+				for((pStr,kid)<-t.children){
 					val (kidStr, kidNum) = h(level-1,kid,'\t'+start)
                                    	count+=kidNum    	
 					sb.append(start+pStr+" count: "+kidNum+"\n")
@@ -105,7 +102,6 @@ class DomainTrie {
 					(sb.toString.stripLineEnd,count)
                         	}
                 	case _ => ("",node.getFreq)
-			//(start+node.getFreq.toString, node.getFreq) 
 			}
 		}		
 	 	val ans = h(level,this)
@@ -113,16 +109,16 @@ class DomainTrie {
 		}
 
 
- 	def findCSNonceDomains(lenSubDomain: Int, thr: Double): Unit = {
+ 	def findCSNonceDomains(lenSubDomain: Int, thr: Double=0.0): Unit = {
 		//var ans = List.empty[Option[String]]
 		def h(lev: Int, tr: Double, dom:String, run: List[(String,Int,Int,Int)], node: T): List[(String,Int,Int,Int)] ={
 			node match {
                        	case t: TrieNode => {
 				if(lev == 0){
 					val subs = t.children.values.map(_.getNumSubDomains).sum//.reduce(_+_)
-					//if(subs > tr) 
+					if(subs > tr) 
 						(dom,t.getFreq,t.children.size,subs)+:run
-					//else run		
+					else run		
 				}
 				else{
 					var ans = run
@@ -134,7 +130,6 @@ class DomainTrie {
                 	case _ => run 
 			}
 		}
-			//(dom+" Num subs "+t.children.size+" Tot instances: "+subs)+:run
 		h(lenSubDomain,thr,"",List.empty[(String,Int,Int,Int)],this).sortBy(_._3).foreach(
 			x=>println(x._1+" Num of instances where fqn "
 				  +x._2+" Num child domains: "+x._3+
@@ -180,7 +175,6 @@ class DomainTrie {
     		else children(list.head).search(list.tail)
 	}
   	def add(list: List[String], inFreq: Int): T = {
-     	    //println(list.head)
 	    if(list.isEmpty) this.copy(canEndHere=true, freq = this.freq+inFreq) 
 	    else if(!children.contains(list.head)) this.copy(children = this.children+(list.head-> EmptyNode.add(list.tail, inFreq)))
 	    else this.copy(children = this.children+(list.head-> this.children(list.head).add(list.tail, inFreq)))
@@ -212,13 +206,32 @@ class DomainTrie {
   
 }
 
-def main(): Unit {
-	val t = new DomainTrie
-	val raw = scala.io.Source.fromFile(args(0)).getLines.toList.map(_.split(" "))
-	//val tups = raw.map(x=>(x.apply(0).reverse.split(".").toList, Integer.parseInt(x.apply(1))))
-	raw.foreach( x=>{t+=(x(0),x(1))})
-	//t.stats(4)
-	t.buildGraph(Integer.parseInt(args(1)))
-	//t.findCSNonceDomains(Integer.parseInt(args(1)),50)
+def main(): Unit = {
+	val msg = "this program takes in a listing of domain names to frequencies and parses them into useful formats for analysis"
+	var help = "Usage:\nargument 0 is the file to parse\nargument 1 is the mode, i.e."
+	help += "\n\t--tree for a dns tree representation"
+	help += "\n\t\targument 2 is the desired branch depth"
+	help += "\n\t--text output"
+	help += "\n\t\targument 2 is the desired level of subdomains to analyze, ie, www.foo.bar has three levels" 
+	help += "\n\t\targument 3 is the minimum threshold of child subdomains for a domain to be included in output"
+	help += "\n\t--graph for a visual graph representation (requires graphvis)"
+	try {
+		val t = new DomainTrie
+		val raw = scala.io.Source.fromFile(args(0)).getLines.toList.map(_.split(" "))
+		raw.foreach( x=>{t+=(x(0),x(1))})
+		if(args(1) == "--graph") t.buildGraph(Integer.parseInt(args(2)))
+		else if(args(1) == "--text") t.findCSNonceDomains(Integer.parseInt(args(2)), Integer.parseInt(args(3)))
+		else if(args(1) == "--tree") t.stats(Integer.parseInt(args(2)))
+		else ???
+
+                
+        }
+        catch{
+        	case _: Throwable => {
+			println(msg)
+			println(help)
+		}
+        }
+
 }
 main()
