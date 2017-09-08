@@ -49,7 +49,11 @@ global reserved_ipv4_subnets = [0.0.0.0/8, 100.64.0.0/10, 169.254.0.0/16, 172.16
 global reserved_ipv6_subnets = [[::1]/128, [::ffff:0:0]/96, [100::]/64, [64:ff9b::]/96, [2001::]/30, [2001:10::]/28, [2001:20::]/28, [2001:db8::]/32, [2002::]/16,
 [fc00::]/8, [fe80::]/10, [ff00::]/8];
 
+#A map of domain names to IPv4 addresses
 global dn_record_store: table[string] of set[addr];
+
+#A map of domain names to IPv6 addresses
+global dn_aaaa_record_store: table[string] of set[addr];
 
 # Standard procedure to initialize custom log names abnormal_dns.log
 event bro_init()
@@ -118,12 +122,10 @@ function get_top_domains(dn: string): string {
 	if(index < 3) return dn;
 	local cnt = 0;
 	while(index >= 0 && cnt < 3){
-		ans = dn_vector[index]+"."+ans; #TODO fix trailing .
+		ans = dn_vector[index]+"."+ans; 
 		index-=1;
 		cnt+=1;	
 	}
-	#TODO print fmt("%s", dn);
-	#print fmt("%s", ans);
 	return ans;
 }
 
@@ -163,36 +165,36 @@ event dns_request(c: connection, msg:dns_msg, query: string, qtype: count, qclas
 # Detects whether the IPv4 address is in reserved subnet
 event dns_A_reply(c: connection, msg: dns_msg, ans: dns_answer, a: addr) {
     if(get_class_network(a) in set_reserved_ipv4_subnets) push_ab_dns_log(c,55,"A Record Reply Reserved IP Address",fmt("%s",a)); 
-    local top = get_top_domains(ans$query); #TODO add number parameter ?  
+    local top = get_top_domains(ans$query);
     if(top in dn_record_store){
     	local top_set = dn_record_store[top]; 
-	add top_set[a]; #TODO check mutablity issues
+	add top_set[a]; 
 	if( |top_set| > 9) push_ab_dns_log(c, 57, fmt("A Record Reply that maps too many (%s) IPs to a subdomain", |top_set|),fmt(top+" ==> %s",a));
 	dn_record_store[top]=top_set;     
 	}
     else{
 	dn_record_store[top] = set(a);	    
     }
-    #print "======================================";
-    #for(rec in dn_record_store) {
-    	#print rec, dn_record_store[rec];
-	#if (dn_record_store[i,j] == "done") break;
-    	#if (dn_record_store[i,j] == "skip") next;
-    	#print i,j;
-	#}
 }
 
 
 # EVENT ID 65 - AAAA RECORD REPLY RESERVED IP ADDRESS
 # Detects whether the IPv6 address is in reserved subnet
 event dns_AAAA_reply(c: connection, msg: dns_msg, ans: dns_answer, a: addr) {
-    #TODO: Create IPv6 array of reserved CIDRs
     for (cidr in reserved_ipv6_subnets) {
-    	#TODO Get rid of this naive iteration for an more efficent lookup
-    	#i.e. transform a into network id; hah table lookup 
-    	#TODO Make into a function call    
     	if (a in cidr) {
            push_ab_dns_log(c,65,"AAAA Record Reply Reserved IP Address",fmt("%s",a)); 
         }
+    } 
+    local top = get_top_domains(ans$query);
+    if(top in dn_aaaa_record_store){
+    	local top_set = dn_aaaa_record_store[top]; 
+	add top_set[a]; 
+	if( |top_set| > 9) push_ab_dns_log(c, 67, fmt("AAAA Record Reply that maps too many (%s) IPs to a subdomain", |top_set|),fmt(top+" ==> %s",a));
+	dn_aaaa_record_store[top]=top_set;     
+	}
+    else{
+	dn_aaaa_record_store[top] = set(a);	    
     }
+    
 }

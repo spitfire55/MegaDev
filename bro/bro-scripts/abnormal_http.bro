@@ -45,11 +45,13 @@ type Host_Rec: record{
  };
 
 # A Map to get track of post/get state
-#TODO global method_freq_map: table[string] of Host_Rec;
 global method_freq_map: table[addr] of Host_Rec;
 
 # Whitelist domains, based on benign or already blocked domains
 global whitelist_domains: set[string] = {"arpa", "bluenet", "mlg"};
+
+# Whitelist of legal http methods
+global legal_http_methods: set[string] = {"POST", "GET", "HEAD", "PUT", "DELETE", "OPTIONS", "CONNECT"};
 
 # Whitelist IPs Set of ip's to ignore
 global whitelist_ips: set[addr] = {10.1.60.2};
@@ -75,7 +77,6 @@ function base64_subdomain(subdomains: vector of string): bool {
 
 # Input: Vector of subdomains
 # Output: True/False indicating whether any of the subdomains are whitelisted
-#TODO  Whitelist initialization script?
 function whitelist_domain_check(subdomains: vector of string): bool {
     for(i in subdomains) {
         local subdomain_string = cat(subdomains[i]);
@@ -129,18 +130,17 @@ event http_request(c: connection, method: string, original_URI: string, unescape
     if (base64_uri_query != "") {
         push_ab_http_log(c, 9,"Base64 query string", unescaped_URI); 
     }
-    #TODO EVENT ID 08 - POST/GET ASYMMETRY
+    #EVENT ID 08 - POST/GET ASYMMETRY
     local host_rec: Host_Rec;
-    #if(c$http?$host) 
-#	print fmt("%s",c$http$uri ) ;
-#	print fmt("%s",split_string1(c$http$uri, /\/\//)[1]) ;
     if(c$id$resp_h in method_freq_map) host_rec = method_freq_map[c$id$resp_h];
     else host_rec = Host_Rec($post_count = 0, $get_count = 0, $other_count=0);
     if(method == "POST") host_rec$post_count += 1;
     else if(method == "GET") host_rec$get_count += 1;
     else{
 	host_rec$other_count+=1;
-     	#NOTE check weird for unknown_HTTP_method
+     	#EVENT ID 07 - Unknown_HTTP_method
+	if( method !in legal_http_methods) 
+		push_ab_http_log(c, 7, "Illegal Http Method", unescaped_URI+" "+method);	
 	}
     if( host_rec$post_count > 0 && (host_rec$get_count / (host_rec$post_count*1.0)) > 20){
 		local tot_count = host_rec$post_count + host_rec$get_count;
