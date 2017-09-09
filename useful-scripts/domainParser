@@ -1,4 +1,9 @@
-#!/usr/bin/env scala 
+#!/usr/bin/env scala
+
+import sys.process._ 
+import scala.collection.mutable.{Map=>MMap}
+import java.io._
+import scala.language.postfixOps
 
 class DomainTrie { 
   
@@ -17,7 +22,7 @@ class DomainTrie {
   
  def stats(levels: Int): Unit = root.printStats(levels) 
  def findCSNonceDomains(lenSubDomain: Int, thr: Double): Unit = root.findCSNonceDomains(lenSubDomain, thr)
- def buildGraph(levels: Int): Unit = ??? // TODO root.buildGraph(levels)	
+ def buildGraph(levels: Int): Unit = root.genGraphs(levels)	
 
  
  
@@ -45,47 +50,64 @@ class DomainTrie {
 	   }
 	   h(this)	
   	}
-	/*	
+	
 	def genGraphs(l: Int): Unit = {
 		val answers = buildGraphs(l)
 		for((key,sb) <- answers){
-			println("digraph G {")
-			println(sb.toString)
-			println("}")
+			val workingDir:String = ("pwd"!!)
+			TextWriter(key+".gv", workingDir.trim, "digraph{\n"+sb.toString+"\n}")
+			val cmd = "dot -Tpdf "+key+".gv -o "+key+".pdf -Gsize=100000,100000 -Grankdir=BT -Grank=max -Granksep=10"
+			cmd !!
+			//val cmd2 = ("rm "+key+".gv")
+			//cmd2 !!
 		}
 	}
-	def buildGraphs(mStrlevel: Int): Map[String, StringBuilder] ={
-                val sb = new StringBuilder
+	def buildGraphs(mStrlevel: Int): MMap[String, StringBuilder] ={
+                val ans = MMap.empty[String, StringBuilder]
 		def alphaNum(x: Char): Boolean = {
 			if( x >= 48 && x <= 57) true
 			else if(x >= 65 && x <= 90) true
 			else if(x >= 97 && x <= 122) true
 			else false
 		}
-		def h(level: Int, node: T,start: String = "\t"): Unit = {
+		def h(level: Int, node: T,start: String = "\t", key: String =""): Unit = {
+			
+			val sb = ans.getOrElse(key, new StringBuilder)
 			node match {
                        	case t: TrieNode => {
 				var count = 0
-				if(level == 0) {sb.append(start+""+t.getNumSubDomains+";\n"); return}
-				for((pStr,kid)<-t.children){//TODO Order
+				if(level == 0) {
+					sb.append(start+""+t.getNumSubDomains+";\n")
+					ans+=(key->sb)
+					return
+				}
+				for((pStr,kid)<-t.children){
 					val fPstr = if(pStr.size > 10) "l"+pStr.filter(alphaNum(_)).take(10)+"T" else "l"+pStr.filter(alphaNum(_))
 					kid match {
 						case t1: TrieNode =>{
-							//if(mStrlevel == level) h(level-1,kid,start+fPstr+"d")
-							///else 
-							//if(t1.getNumSubDomains > 500) 
-							h(level-1,kid,start+fPstr+" -> ")
+							if(mStrlevel == level){
+								ans+=(fPstr -> sb)  
+								h(level-1,kid,start+fPstr+"d", fPstr)
+							}
+							else h(level-1,kid,start+fPstr+" -> ", key)
 				    		}
-						case _ => sb.append(start+fPstr+";\n")
+						case _ =>{ 
+							sb.append(start+fPstr+";\n")
+							ans+=(key -> sb)
+							}
 						}
 					}
                         	}
-                	case _ => sb.append(start)
+                	case _ => {
+				sb.append(start)
+				ans+=(key -> sb)	
+				}
 			}
 		}		
 	 	h(mStrlevel,this)
+		ans
 		}
-	*/
+	
 	def printStats(level: Int): Unit ={
 		def h(level: Int, node: T,start: String = "|___"): (String,Int) ={
 			node match {
@@ -206,6 +228,33 @@ class DomainTrie {
   
 }
 
+
+object TextWriter{
+  def apply(f:String, dir: String, stream: String){
+    var out = None: Option[BufferedWriter]
+
+    try{
+      val dirs = new File(dir)
+      
+      dirs.mkdirs()
+      val file = new File(dir+"/"+f)
+      out = Some(new BufferedWriter(new FileWriter(file)))
+
+      stream.foreach(x=>out.get.write(x))
+    }
+    catch {
+      case e: IOException => {e.printStackTrace; sys.exit()}  
+    }
+    finally{
+      if(out.isDefined) out.get.close      
+      
+    }
+    
+  }
+  
+}
+
+
 def main(): Unit = {
 	val msg = "this program takes in a listing of domain names to frequencies and parses them into useful formats for analysis"
 	var help = "Usage:\nargument 0 is the file to parse\nargument 1 is the mode, i.e."
@@ -215,7 +264,7 @@ def main(): Unit = {
 	help += "\n\t\targument 2 is the desired level of subdomains to analyze, ie, www.foo.bar has three levels" 
 	help += "\n\t\targument 3 is the minimum threshold of child subdomains for a domain to be included in output"
 	help += "\n\t--graph for a visual graph representation (requires graphvis)"
-	try {
+	//try {
 		val t = new DomainTrie
 		val raw = scala.io.Source.fromFile(args(0)).getLines.toList.map(_.split(" "))
 		raw.foreach( x=>{t+=(x(0),x(1))})
@@ -225,13 +274,14 @@ def main(): Unit = {
 		else ???
 
                 
-        }
+        //}
+	/*
         catch{
         	case _: Throwable => {
 			println(msg)
 			println(help)
 		}
-        }
+        } */
 
 }
 main()
