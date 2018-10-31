@@ -2,7 +2,7 @@
 
 **Authors**: Mitchell DeRidder, Dale Lakes, Matthew Shockley
 
-**Advisors**: Benjamin Klimkowski, W. Michael Petullo
+**Advisors**: [MAJ Benjamin Klimkowski](www.benklim.org), [LTC W. Michael Petullo](flyn.org)
 
 This repo will contain our team's code for our undergraduate design capstone, where we used Bro to successfully detect malicious traffic from compromised machines to a remote command and control (C2) server. Specifically, our team focused on detecting Cobalt Strike, a popular penetration tool. Cobalt Strike possesses a sophisticated callback mechanism that uses common protocols to beacon back to a remote C2 server and fetch instructions. From the remote server, attackers can send C2 instructions to processes running on the compromised hosts. This stored-and-forward architecture is designed to avoid detection, blending in with ordinary traffic. 
 
